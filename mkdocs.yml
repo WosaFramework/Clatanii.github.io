@@ -1,0 +1,15 @@
+site_name: Wosa Docs
+theme: ivory
+repo_url: https://github.com/WosaFramework/Docs/
+repo_name: GitHub
+
+nav:
+    - 'Installation' :
+      - 'How to install' : 'install/install.md'
+      - 'Troubleshooting' : 'install/troubleshooting.md'
+    
+    - 'Core documentation' :
+      - 'Introduction' : 'core/introduction.md'
+
+      - 'API' :
+        - 'Classes' : 'core/api_classes.md'
