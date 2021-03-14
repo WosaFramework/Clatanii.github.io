@@ -4,12 +4,23 @@ repo_url: https://github.com/WosaFramework/Docs/
 repo_name: GitHub
 
 nav:
+    - 'Home' : 'index.md'
+
     - 'Installation' :
       - 'How to install' : 'install/install.md'
       - 'Troubleshooting' : 'install/troubleshooting.md'
     
-    - 'Core documentation' :
-      - 'Introduction' : 'core/introduction.md'
+    - 'Connector API' :
+      - 'Setup' : 'connector/setup.md'
+      - 'Server Natives' : 'connector/natives_server.md'
+      - 'Client Natives' : 'connector/natives_client.md'
 
-      - 'API' :
-        - 'Classes' : 'core/api_classes.md'
+    - 'Events' :
+      - 'Server Events' : 'events/events_server.md'
+      - 'Client Events' : 'events/events_client.md'
+
+    - 'Core API' :
+      - 'Introduction' : 'core/introduction.md'
+      - 'API Scripting' : 'core/api.md'
+      - 'System Log' : 'core/system_log.md'
+      - 'External Scripts' : 'core/external.md'
