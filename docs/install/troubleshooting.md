@@ -16,7 +16,7 @@ Solution: This means that the `wosa.key` you entered in your **server.cfg** is a
 **Issue: The console says that MariaDB field xxx does not have a default value.**  
 Solution: This *is* hopefully fixed in newer versions of wosa and should not occur but if it do occur please read [this](https://www.farbeyondcode.com/Solution-for-MariaDB-Field--xxx--doesn-t-have-a-default-value-5-2720.html) post.
 
-**Issue: Cars in the server wont spawn and will just spam the F8 console.**  
+**Issue: Cars in the server wont spawn and will just spam the F8 console / When I try to spawn a car from the garage I just get a black screen.**  
 Solution: You need to use a up to date server and use `onesync legacy` in your **server.cfg** to enable server awareness as wosa is built on OneSync technology.
 
 **If you did not find a solution on this page do not hesitate to contact support on our forums or in our discord.**

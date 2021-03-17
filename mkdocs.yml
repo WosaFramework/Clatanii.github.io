@@ -1,4 +1,12 @@
-site_name: Wosa Docs
+site_name: Wosa Documentation
+site_description: Official Wosa Documentation
+site_author: Wosa.Core.Development
+
+copyright: Copyright; 2019-2021 Wosa Framework
+
+docs_dir: docs
+strict: true
+
 theme: ivory
 repo_url: https://github.com/WosaFramework/Docs/
 repo_name: GitHub
