@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Wosa.Core.Development">
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+    <title>Server Natives &mdash; Wosa Documentation</title>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.1/css/v4-shims.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script> 
+</head>
+
+<body ontouchstart="">
+    <div id="container">
+        <aside>
+            <div class="home">
+                <div class="title">
+                    <button class="hamburger"></button>
+                    <a href="../.." class="site-name"> Wosa Documentation</a>
+                </div>
+                <div class="search">
+                    <div role="search">
+    <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+        <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+    </form>
+</div>
+                </div>
+            </div>
+            <nav class="nav">
+                <ul class="root">
+                    <li class="toctree-l1"><a class="nav-item" href="../..">Home</a></li>
+                    <li class="toctree-l1"><button class="section nav-item">Installation</button>
+<ul class="subnav">
+    <li class="toctree-l2"><a class="nav-item" href="../../install/install/">How to install</a></li>
+    <li class="toctree-l2"><a class="nav-item" href="../../install/troubleshooting/">Troubleshooting</a></li>
+</ul></li>
+                    <li class="toctree-l1"><button class="section nav-item">Connector API</button>
+<ul class="subnav">
+    <li class="toctree-l2"><a class="nav-item" href="../setup/">Setup</a></li>
+    <li class="toctree-l2 current"><a class="nav-item current" href="./">Server Natives</a>
+<ul class="subnav">
+<li class="toctree-l3"><a class="nav-item toc" href="#user">User</a></li>
+<li class="toctree-l3"><a class="nav-item toc" href="#anticheat">AntiCheat</a></li>
+<li class="toctree-l3"><a class="nav-item toc" href="#permission">Permission</a></li>
+<li class="toctree-l3"><a class="nav-item toc" href="#money">Money</a></li>
+<li class="toctree-l3"><a class="nav-item toc" href="#character">Character</a></li>
+<li class="toctree-l3"><a class="nav-item toc" href="#faction">Faction</a></li>
+<li class="toctree-l3"><a class="nav-item toc" href="#inventory">Inventory</a></li>
+<li class="toctree-l3"><a class="nav-item toc" href="#other">Other</a></li>
+</ul></li>
+    <li class="toctree-l2"><a class="nav-item" href="../natives_client/">Client Natives</a></li>
+</ul></li>
+                    <li class="toctree-l1"><button class="section nav-item">Events</button>
+<ul class="subnav">
+    <li class="toctree-l2"><a class="nav-item" href="../../events/events_server/">Server Events</a></li>
+    <li class="toctree-l2"><a class="nav-item" href="../../events/events_client/">Client Events</a></li>
+</ul></li>
+                    <li class="toctree-l1"><button class="section nav-item">Core API</button>
+<ul class="subnav">
+    <li class="toctree-l2"><a class="nav-item" href="../../core/introduction/">Introduction</a></li>
+    <li class="toctree-l2"><a class="nav-item" href="../../core/api/">API Scripting</a></li>
+    <li class="toctree-l2"><a class="nav-item" href="../../core/system_log/">System Log</a></li>
+    <li class="toctree-l2"><a class="nav-item" href="../../core/external/">External Scripts</a></li>
+</ul></li>
+                </ul>
+            </nav>
+            <div class="repo">
+    <div class="link">
+        <a href="https://github.com/WosaFramework/Docs/" class="fa fa-github"> GitHub</a>
+    </div>
+    <div class="previous"><a href="../setup/">&laquo; Previous</a></div>
+    <div class="next"><a href="../natives_client/">Next &raquo;</a></div>
+</div>
+        </aside>
+        <div id="spacer"><button class="arrow"></button></div>
+        <main>
+            <div class="home-top">
+                <button class="hamburger"></button>
+                <a href="../.." class="site-name"> Wosa Documentation</a>
+            </div>
+            <div id="main">
+                <nav class="breadcrumbs">
+<ul>
+    <li>Connector API</li>
+</ul>
+</nav>
+                <div id="content"><h1 id="server-natives">Server Natives</h1>
+<p>Server classed Wosa natives to be used with the API connector.</p>
+<h4 id="user">User</h4>
+<pre><code class="language-Markdown">-- Desc: Used to get the r* license, Main used identifier in Wosa.
+
+local license = Wosa.User.License(ID --[[ int ]])
+</code></pre>
+<pre><code class="language-Markdown">-- Desc: Used to get the currently active character table or user table. The &quot;Type&quot; can either be &quot;i&quot; for inventory or &quot;c&quot; for character.
+
+local Wosa.User.CurrentDB(ID --[[ int ]], Type --[[ string ]])
+</code></pre>
+<pre><code class="language-Markdown">-- Desc: If you are looking to return a player id from a license you can use this function, This will return nil if the player is not active on the server.
+
+local ID = P_API.User.UserFromLicense(License --[[ string ]])
+</code></pre>
+<pre><code class="language-Markdown">-- Desc: Will kick a user by the &quot;SYSTEM&quot;.
+
+Wosa.User.Kick(ID --[[ int ]], Reason --[[ string ]])
+</code></pre>
+<pre><code class="language-Markdown">-- Desc: Will permanent ban the user by the &quot;SYSTEM&quot;.
+
+Wosa.User.Ban(ID --[[ int ]], Reason --[[ string ]])
+</code></pre>
+<h4 id="anticheat">AntiCheat</h4>
+<pre><code class="language-Markdown">-- Desc: This native can be used to ban people from &quot;event&quot; abusing currently. Do not use this native for regular banning as this system will and might work differently.
+
+Wosa.Character.AntiCheat.Ban(ID --[[ int ]], Type --[[ string ]], Custom --[[ string ]])
+
+-- Example:
+Wosa.Character.AntiCheat.Ban(1, &quot;event&quot;, &quot;MY_EVENT_HEHE&quot;)
+</code></pre>
+<h4 id="permission">Permission</h4>
+<pre><code class="language-Markdown">-- Desc: Will return the users rank in the server.
+
+local rank = Wosa.User.Permission.Get(ID --[[ int ]])
+</code></pre>
+<pre><code class="language-Markdown">-- Desc: Will set the users rank. Needs to be a valid rank, If non valid they will not be available to join.
+
+local rank = Wosa.User.Permission.Set(ID --[[ int ]], Rank --[[ string ]])
+</code></pre>
+<h4 id="money">Money</h4>
+<pre><code class="language-Markdown">-- Desc: Used to remove money from any available payment method.
+
+Wosa.Character.Money.RemoveFromAny(ID --[[ int ]], Amount --[[ int ]])
+</code></pre>
+<pre><code class="language-Markdown">-- Desc: Used to add money to any available payment method.
+
+Wosa.Character.Money.AddToAny(ID --[[ int ]], Amount --[[ int ]])
+</code></pre>
+<pre><code class="language-Markdown">-- Desc: Via this function you can get a players avaliable &quot;payment methods&quot;.
+
+local methods = Wosa.Character.Money.Methods(ID --[[ int ]])
+
+-- Example:
+print('Vanilla Card: '..tostring(methods[1]))
+print('Business Card: '..tostring(methods[2]))
+print('Cash: '..tostring(methods[3]))
+</code></pre>
+<pre><code class="language-Markdown">-- Desc: Check the money balance for a specific payment method.
+
+local balance = Wosa.Character.Money.Balance(ID --[[ int ]], Method --[[ string ]])
+
+-- Example:
+local balance = Wosa.Character.Money.Balance(ID, 'RE_Cash')
+
+print('The player has '..balance..' as balance as hand cash.')
+</code></pre>
+<pre><code class="language-Markdown">-- Desc: Removes money from a specific payment method.
+
+Wosa.Character.Money.Remove(ID --[[ int ]], Method --[[ string ]], Amount --[[ int ]])
+</code></pre>
+<pre><code class="language-Markdown">-- Desc: Add money to a specific payment method.
+
+Wosa.Character.Money.Add(ID --[[ int ]], Method --[[ string ]], Amount --[[ int ]])
+</code></pre>
+<pre><code class="language-Markdown">-- Desc: Set the money for a specific payment method.
+
+Wosa.Character.Money.Set(ID --[[ int ]], Method --[[ string ]], Amount --[[ int ]])
+</code></pre>
+<h4 id="character">Character</h4>
+<pre><code class="language-Markdown">-- Desc: Add driver license points to a players current character.
+
+Wosa.Character.AddLicensePoints(ID --[[ int ]], Points --[[ int ]])
+</code></pre>
+<pre><code class="language-Markdown">-- Desc: Return character data for a users current selected character. Table possible indexes:
+    -- firstname : string
+    -- middlename = : string
+    -- lastname = : string
+    -- day = : string
+    -- month =  : string
+    -- year = : int
+    -- gender = : string
+    -- phone_number : string
+    -- driver_license : bool
+    -- truck_license : bool
+    -- air_license : bool
+    -- boat_license : bool
+    -- firearm_license : string
+    -- job : string
+
+local data = Wosa.Character.Data(ID --[[ int ]])
+</code></pre>
+<pre><code class="language-Markdown">-- Desc: Return characters data from first and lastname (from the database), will return the same table roughly as above ^^.
+
+local data = Wosa.Character.DataFromName(Firstname --[[ string ]], Lastname --[[ string ]])
+</code></pre>
+<pre><code class="language-Markdown">-- Desc: Returns all characters from the database.
+
+local data = Wosa.Character.All()
+</code></pre>
+<h4 id="faction">Faction</h4>
+<p>Server faction natives does not take immediate effect on the user, The user is required to relogg in order to notice the changes.</p>
+<pre><code class="language-Markdown">-- Desc: Add a player to a faction manually. This just straight accesses the database and uses a
+&quot;insert&quot; method to add it manually to the database.
+
+Wosa.Character.Faction.Add(ID --[[ int ]], Job --[[ string ]], Rank --[[ string ]], SubRank --[[ string ]])
+</code></pre>
+<pre><code class="language-Markdown">-- Desc: This function can be used to remove a player from a faction, As this function utilizes
+license + character table means that you can remove players from a faction when they are
+offline as well.
+
+Wosa.Character.Faction.Remove(License --[[ string ]], CharacterTable --[[ string ]], Job --[[ string ]])
+</code></pre>
+<pre><code class="language-Markdown">-- Desc: Used if you want to update a specific row in the database for a faction, You can
+update users rows when they are offline as well.
+
+Wosa.Character.Faction.Update(License --[[ string ]], CharacterTable --[[ string ]], Job --[[ string ]], newRank -- [[ string ]], newSubRank -- [[ string ]])
+</code></pre>
+<h4 id="inventory">Inventory</h4>
+<pre><code class="language-Markdown">-- Desc: Returns all items in a table, loop or index the table to get values. Gets the inventory
+table for a specific user on the server. Table possible indexes:
+    -- logged_name : string
+    -- license_id : string
+    -- item_name : string
+    -- display_name : string
+    -- item_string1 : string
+    -- item_string2 : string
+    -- item_string3 : string
+    -- item_float1 : float
+    -- item_float2 : float
+    -- item_float3 : float
+    -- item_bool1 : bool
+    -- item_bool2 : bool
+    -- item_bool3 : bool
+    -- item_int1 : int
+    -- item_int2 : int
+    -- item_int3 : int
+
+local items = Wosa.Character.Inventory.Get(ID --[[ int ]])
+
+-- Example:
+for i, item in ipairs(items) do
+    print('this user has a '..item.display_name..'.')
+end
+</code></pre>
+<pre><code class="language-Markdown">-- Desc: Remove all &quot;removable&quot; items from the players inventory, That said all &quot;custom&quot; items but not items such as ID card, cash item, drivers license etc.
+
+Wosa.Character.Inventory.Item.RemoveAllCustom(ID --[[ int ]])
+</code></pre>
+<pre><code class="language-Markdown">-- Desc: Add a item to a users character.
+
+-- // Core Dev Notice: Should prolly remove &quot;InventoryTable&quot; and auto set it for less confusion.
+
+Wosa.Character.Inventory.Item.Add(ID --[[ int ]], InventoryTable --[[ string ]], Data = --[[ table ]])
+
+-- Example:
+local Data = {itemName = 'RI_EXAMPLE_ITEM', displayName = 'Example Item', Usable = true, Givable = true, Dropable = true, String1 = '', String2 = '', String3 = '', Bool1 = false, Bool2 = false, Bool3 = false, Int1 = 0, Int2 = 0, Int3 = 0, Float1 = 0.0, Float2 = 0.0, Float3 = 0.0 }
+Wosa.Character.Inventory.Item.Add(1, 'inventory_1', Data)
+</code></pre>
+<pre><code class="language-Markdown">-- Desc: So, This can be used in a few ways. If you leave &quot;ItemID&quot; nil then you will remove
+all items named the &quot;itemName&quot; in the inventory. If you want to remove a specific
+item input the &quot;ItemID&quot;.
+
+Wosa.Character.Inventory.Item.Remove(ID --[[ int ]], ItemName --[[ string ]], ItemID --[[ int ]])
+</code></pre>
+<pre><code class="language-Markdown">-- Desc: Check if a person has a item, will return true if the person has more then 1 of the item.
+
+local Exist = Wosa.Character.Inventory.Item.Exist(ID --[[ int ]], ItemName --[[ string ]])
+</code></pre>
+<h4 id="other">Other</h4>
+<pre><code class="language-Markdown">-- Desc: Converts a SqlData to a readable Lua visible date, useful for transforming a timestamp to a &quot;readable&quot; format.
+
+Wosa.Tools.ConvertSQLDateToLuaFormat(SqlDate -- [[ int? ]])
+</code></pre>
+<pre><code class="language-Markdown">-- Desc: Returns the full data set for all languages from &quot;wosa_core&quot;.
+
+local Languages = Wosa.Translate.Get()
+</code></pre>
+<pre><code class="language-Markdown">-- Desc: Return the current used language.
+
+local Language = Wosa.Translate.Language()
+</code></pre></div>
+                <footer>
+    <div class="footer-buttons">
+        <div class="previous"><a href="../setup/" title="Setup"><span>Previous</span></a></div>
+        <div class="next"><a href="../natives_client/" title="Client Natives"><span>Next</span></a></div>
+    </div>
+    <div class="footer-note">
+        <p>
+            Built with <a href="http://www.mkdocs.org">MkDocs</a> using
+            <a href="https://github.com/daizutabi/mkdocs-ivory">Ivory theme</a>.
+        </p>
+    </div>
+</footer>
+            </div>
+        </main>
+    </div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js"></script>
+    <script src="../../search/main.js"></script>
+</body>
+
+</html>

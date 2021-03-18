@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Wosa.Core.Development">
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+    <title>Server Events &mdash; Wosa Documentation</title>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.1/css/v4-shims.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script> 
+</head>
+
+<body ontouchstart="">
+    <div id="container">
+        <aside>
+            <div class="home">
+                <div class="title">
+                    <button class="hamburger"></button>
+                    <a href="../.." class="site-name"> Wosa Documentation</a>
+                </div>
+                <div class="search">
+                    <div role="search">
+    <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+        <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+    </form>
+</div>
+                </div>
+            </div>
+            <nav class="nav">
+                <ul class="root">
+                    <li class="toctree-l1"><a class="nav-item" href="../..">Home</a></li>
+                    <li class="toctree-l1"><button class="section nav-item">Installation</button>
+<ul class="subnav">
+    <li class="toctree-l2"><a class="nav-item" href="../../install/install/">How to install</a></li>
+    <li class="toctree-l2"><a class="nav-item" href="../../install/troubleshooting/">Troubleshooting</a></li>
+</ul></li>
+                    <li class="toctree-l1"><button class="section nav-item">Connector API</button>
+<ul class="subnav">
+    <li class="toctree-l2"><a class="nav-item" href="../../connector/setup/">Setup</a></li>
+    <li class="toctree-l2"><a class="nav-item" href="../../connector/natives_server/">Server Natives</a></li>
+    <li class="toctree-l2"><a class="nav-item" href="../../connector/natives_client/">Client Natives</a></li>
+</ul></li>
+                    <li class="toctree-l1"><button class="section nav-item">Events</button>
+<ul class="subnav">
+    <li class="toctree-l2 current"><a class="nav-item current" href="./">Server Events</a>
+<ul class="subnav">
+<li class="toctree-l3"><a class="nav-item toc" href="#character">Character</a></li>
+<li class="toctree-l3"><a class="nav-item toc" href="#user">User</a></li>
+</ul></li>
+    <li class="toctree-l2"><a class="nav-item" href="../events_client/">Client Events</a></li>
+</ul></li>
+                    <li class="toctree-l1"><button class="section nav-item">Core API</button>
+<ul class="subnav">
+    <li class="toctree-l2"><a class="nav-item" href="../../core/introduction/">Introduction</a></li>
+    <li class="toctree-l2"><a class="nav-item" href="../../core/api/">API Scripting</a></li>
+    <li class="toctree-l2"><a class="nav-item" href="../../core/system_log/">System Log</a></li>
+    <li class="toctree-l2"><a class="nav-item" href="../../core/external/">External Scripts</a></li>
+</ul></li>
+                </ul>
+            </nav>
+            <div class="repo">
+    <div class="link">
+        <a href="https://github.com/WosaFramework/Docs/" class="fa fa-github"> GitHub</a>
+    </div>
+    <div class="previous"><a href="../../connector/natives_client/">&laquo; Previous</a></div>
+    <div class="next"><a href="../events_client/">Next &raquo;</a></div>
+</div>
+        </aside>
+        <div id="spacer"><button class="arrow"></button></div>
+        <main>
+            <div class="home-top">
+                <button class="hamburger"></button>
+                <a href="../.." class="site-name"> Wosa Documentation</a>
+            </div>
+            <div id="main">
+                <nav class="breadcrumbs">
+<ul>
+    <li>Events</li>
+</ul>
+</nav>
+                <div id="content"><h1 id="server-events">Server Events</h1>
+<h4 id="character">Character</h4>
+<pre><code class="language-Markdown">AddEventHandler('__WOSA:CHARACTER_CREATED', function(playerID, characterData)
+
+end)
+</code></pre>
+<pre><code class="language-Markdown">AddEventHandler('__WOSA:CHARACTER_LOADED', function(playerID, characterData)
+
+end)
+</code></pre>
+<pre><code class="language-Markdown">AddEventHandler('__WOSA:CHARACTER_REMOVED', function(playerID, characterData)
+
+end)
+</code></pre>
+<h4 id="user">User</h4>
+<pre><code class="language-Markdown">AddEventHandler('__WOSA:SERVER:USER_CONNECTING', function(playerID, playerLicense, playerRank, isPlayerNew)
+
+end)
+</code></pre>
+<pre><code class="language-Markdown">AddEventHandler('__WOSA:SERVER:USER_LEAVING', function(playerID, playerLicense, playerRank, leaveReason)
+
+end)
+</code></pre></div>
+                <footer>
+    <div class="footer-buttons">
+        <div class="previous"><a href="../../connector/natives_client/" title="Client Natives"><span>Previous</span></a></div>
+        <div class="next"><a href="../events_client/" title="Client Events"><span>Next</span></a></div>
+    </div>
+    <div class="footer-note">
+        <p>
+            Built with <a href="http://www.mkdocs.org">MkDocs</a> using
+            <a href="https://github.com/daizutabi/mkdocs-ivory">Ivory theme</a>.
+        </p>
+    </div>
+</footer>
+            </div>
+        </main>
+    </div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js"></script>
+    <script src="../../search/main.js"></script>
+</body>
+
+</html>
