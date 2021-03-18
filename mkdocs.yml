@@ -9,7 +9,7 @@ strict: true
 
 theme:
   name: ivory
-  custom_dir: site
+  custom_dir: page
 
 repo_url: https://github.com/WosaFramework/Docs/
 repo_name: GitHub
