@@ -327,7 +327,7 @@ aside>* {
 
 .home, .home-top {
   display: flex;
-  background: #48c;
+  background: #43464d;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -350,12 +350,12 @@ aside>* {
 .nav {
   position: fixed;
   overflow-y: auto;
-  background: #333;
+  background: #36393f;
 }
 
 .repo {
   display: flex;
-  background: #222;
+  background: #202225;
   position: fixed;
   bottom: 0;
   height: 40px;
