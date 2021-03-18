@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Wosa.Core.Development">
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+    <title>Client Natives &mdash; Wosa Documentation</title>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.1/css/v4-shims.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script> 
+</head>
+
+<body ontouchstart="">
+    <div id="container">
+        <aside>
+            <div class="home">
+                <div class="title">
+                    <button class="hamburger"></button>
+                    <a href="../.." class="site-name"> Wosa Documentation</a>
+                </div>
+                <div class="search">
+                    <div role="search">
+    <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+        <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+    </form>
+</div>
+                </div>
+            </div>
+            <nav class="nav">
+                <ul class="root">
+                    <li class="toctree-l1"><a class="nav-item" href="../..">Home</a></li>
+                    <li class="toctree-l1"><button class="section nav-item">Installation</button>
+<ul class="subnav">
+    <li class="toctree-l2"><a class="nav-item" href="../../install/install/">How to install</a></li>
+    <li class="toctree-l2"><a class="nav-item" href="../../install/troubleshooting/">Troubleshooting</a></li>
+</ul></li>
+                    <li class="toctree-l1"><button class="section nav-item">Connector API</button>
+<ul class="subnav">
+    <li class="toctree-l2"><a class="nav-item" href="../setup/">Setup</a></li>
+    <li class="toctree-l2"><a class="nav-item" href="../natives_server/">Server Natives</a></li>
+    <li class="toctree-l2 current"><a class="nav-item current" href="./">Client Natives</a>
+<ul class="subnav">
+<li class="toctree-l3"><a class="nav-item toc" href="#scripting">Scripting</a></li>
+<li class="toctree-l3"><a class="nav-item toc" href="#player">Player</a></li>
+<li class="toctree-l3"><a class="nav-item toc" href="#user">User</a></li>
+<li class="toctree-l3"><a class="nav-item toc" href="#character">Character</a></li>
+<li class="toctree-l3"><a class="nav-item toc" href="#phone">Phone</a></li>
+<li class="toctree-l3"><a class="nav-item toc" href="#appearance">Appearance</a></li>
+<li class="toctree-l3"><a class="nav-item toc" href="#alcohol">Alcohol</a></li>
+<li class="toctree-l3"><a class="nav-item toc" href="#job">Job</a></li>
+<li class="toctree-l3"><a class="nav-item toc" href="#faction">Faction</a></li>
+<li class="toctree-l3"><a class="nav-item toc" href="#inventory">Inventory</a></li>
+<li class="toctree-l3"><a class="nav-item toc" href="#players">Players</a></li>
+<li class="toctree-l3"><a class="nav-item toc" href="#vehicle">Vehicle</a></li>
+<li class="toctree-l3"><a class="nav-item toc" href="#vehicle-flags">Vehicle Flags</a></li>
+<li class="toctree-l3"><a class="nav-item toc" href="#request">Request</a></li>
+<li class="toctree-l3"><a class="nav-item toc" href="#ped">Ped</a></li>
+<li class="toctree-l3"><a class="nav-item toc" href="#weapon">Weapon</a></li>
+<li class="toctree-l3"><a class="nav-item toc" href="#camera">Camera</a></li>
+<li class="toctree-l3"><a class="nav-item toc" href="#screen">Screen</a></li>
+<li class="toctree-l3"><a class="nav-item toc" href="#hud">Hud</a></li>
+<li class="toctree-l3"><a class="nav-item toc" href="#world-instance">World Instance</a></li>
+<li class="toctree-l3"><a class="nav-item toc" href="#scaleform">Scaleform</a></li>
+<li class="toctree-l3"><a class="nav-item toc" href="#atc">Atc</a></li>
+<li class="toctree-l3"><a class="nav-item toc" href="#other">Other</a></li>
+</ul></li>
+</ul></li>
+                    <li class="toctree-l1"><button class="section nav-item">Events</button>
+<ul class="subnav">
+    <li class="toctree-l2"><a class="nav-item" href="../../events/events_server/">Server Events</a></li>
+    <li class="toctree-l2"><a class="nav-item" href="../../events/events_client/">Client Events</a></li>
+</ul></li>
+                    <li class="toctree-l1"><button class="section nav-item">Core API</button>
+<ul class="subnav">
+    <li class="toctree-l2"><a class="nav-item" href="../../core/introduction/">Introduction</a></li>
+    <li class="toctree-l2"><a class="nav-item" href="../../core/api/">API Scripting</a></li>
+    <li class="toctree-l2"><a class="nav-item" href="../../core/system_log/">System Log</a></li>
+    <li class="toctree-l2"><a class="nav-item" href="../../core/external/">External Scripts</a></li>
+</ul></li>
+                </ul>
+            </nav>
+            <div class="repo">
+    <div class="link">
+        <a href="https://github.com/WosaFramework/Docs/" class="fa fa-github"> GitHub</a>
+    </div>
+    <div class="previous"><a href="../natives_server/">&laquo; Previous</a></div>
+    <div class="next"><a href="../../events/events_server/">Next &raquo;</a></div>
+</div>
+        </aside>
+        <div id="spacer"><button class="arrow"></button></div>
+        <main>
+            <div class="home-top">
+                <button class="hamburger"></button>
+                <a href="../.." class="site-name"> Wosa Documentation</a>
+            </div>
+            <div id="main">
+                <nav class="breadcrumbs">
+<ul>
+    <li>Connector API</li>
+</ul>
+</nav>
+                <div id="content"><h1 id="client-natives">Client Natives</h1>
+<p>Client classed Wosa natives to be used with the API connector.</p>
+<h4 id="scripting">Scripting</h4>
+<pre><code class="language-Markdown">-- Desc: Returns the current usage in kb's as a number (memory) from the core.
+
+local kbs = Wosa.cMemUsage()
+</code></pre>
+<pre><code class="language-Markdown">-- Desc: Creates a thread, &quot;CreateThread&quot; basically.
+
+Wosa.Loop(RequireCharacterLoaded --[[ bool ]], function()
+
+end, WaitMs --[[ int ]])
+</code></pre>
+<h4 id="player">Player</h4>
+<pre><code class="language-Markdown">-- Desc: Gets the players ped cached, A good memory saving practise.
+
+local ped = Wosa.Player.Ped()
+</code></pre>
+<pre><code class="language-Markdown">-- Desc: Gets the players coords cached, A good memory saving practise.
+
+local coords = Wosa.Player.Coords()
+</code></pre>
+<h4 id="user">User</h4>
+<pre><code class="language-Markdown">-- Desc: The current character table used, such as &quot;character_1&quot;.
+
+local characterTable = Wosa.User.CharacterDB()
+</code></pre>
+<pre><code class="language-Markdown">-- Desc: The current inventory table used, such as &quot;inventory_1&quot;.
+
+local characterTable = Wosa.User.InventoryDB()
+</code></pre>
+<pre><code class="language-Markdown">-- Desc: Can be used to manually overwrite the coord saver where you can save with the &quot;last position&quot;. Example if you are in a interior you dont want anyone to be avaliable to spawn back in.
+
+Wosa.User.CoordsSaver(bool --[[ bool ]])
+</code></pre>
+<h4 id="character">Character</h4>
+<pre><code class="language-Markdown">local firstname = Wosa.Character.Firstname()
+</code></pre>
+<pre><code class="language-Markdown">local middlename = Wosa.Character.Middlename()
+</code></pre>
+<pre><code class="language-Markdown">local lastname = Wosa.Character.Lastname()
+</code></pre>
+<pre><code class="language-Markdown">local day = Wosa.Character.Day()
+</code></pre>
+<pre><code class="language-Markdown">local month = Wosa.Character.Month()
+</code></pre>
+<pre><code class="language-Markdown">local year = Wosa.Character.Year()
+</code></pre>
+<pre><code class="language-Markdown">local gender = Wosa.Character.Gender()
+</code></pre>
+<pre><code class="language-Markdown">local drivers_license = Wosa.Character.Drivers()
+</code></pre>
+<pre><code class="language-Markdown">local truck_license = Wosa.Character.Truck()
+</code></pre>
+<pre><code class="language-Markdown">local air_license = Wosa.Character.Air()
+</code></pre>
+<pre><code class="language-Markdown">-- Desc: Not even used lol... *yet*
+
+local boat_license = Wosa.Character.Boat()
+</code></pre>
+<pre><code class="language-Markdown">local firearm_license = Wosa.Character.Firearm()
+</code></pre>
+<pre><code class="language-Markdown">local thirst = Wosa.Character.Thirst()
+</code></pre>
+<pre><code class="language-Markdown">local hunger = Wosa.Character.Hunger()
+</code></pre>
+<h4 id="phone">Phone</h4>
+<pre><code class="language-Markdown">-- Desc: Checks if Mobile-Data in the phone in the menu is enabled.
+
+isMobileDataEnabled = Wosa.Character.Phone.MobileData()
+</code></pre>
+<h4 id="appearance">Appearance</h4>
+<pre><code class="language-Markdown">-- Desc: Load the appearance directly from the database and then set it to your character, stuff such as heritage, face stuff etc and clothes.
+
+Wosa.Character.Appearance.Load()
+</code></pre>
+<pre><code class="language-Markdown">-- Desc: Save what your currently wearing directly to the database.
+
+Wosa.Character.Appearance.Save()
+</code></pre>
+<pre><code class="language-Markdown">-- Save the client cached data to the database, Cache the appearance with &quot;Wosa.Character.Appearance.SaveToLocal()&quot;.
+
+Wosa.Character.Appearance.SaveLocalToDB()
+</code></pre>
+<pre><code class="language-Markdown">-- Save your current appearance to the client cache, This does get &quot;cleared&quot; once you load something from database, save another time or leave the server.
+
+Wosa.Character.Appearance.SaveToLocal()
+</code></pre>
+<pre><code class="language-Markdown">-- Desc: Load from the local cache that you saved to by using the native &quot;Wosa.Character.Appearance.SaveToLocal()&quot;.
+
+Wosa.Character.Appearance.LoadFromLocal()
+</code></pre>
+<h4 id="alcohol">Alcohol</h4>
+<pre><code class="language-Markdown">-- Can't remember the proper amounts, but would guess its way under 1.0.
+
+Wosa.Character.Alcohol.Add(Amount --[[ float ]])
+</code></pre>
+<pre><code class="language-Markdown">-- Get the current alcohol level in the blood, This can be a good way to see how much you should add to make it somewhat legit.
+
+local amount = Wosa.Character.Alcohol.Get()
+</code></pre>
+<pre><code class="language-Markdown">-- Set the alcohol level to a set point.
+
+Wosa.Character.Alcohol.Set(Amount --[[ float ]])
+</code></pre>
+<h4 id="job">Job</h4>
+<pre><code class="language-Markdown">Wosa.Character.Job.Set(JobName --[[ string ]], Salary --[[ int ]], JobNameLabel --[[ string ]])
+</code></pre>
+<pre><code class="language-Markdown">local job = Wosa.Character.Job.Get()
+</code></pre>
+<pre><code class="language-Markdown">-- Basically sets you back to &quot;Civilian&quot;.
+
+Wosa.Character.Job.Clear()
+</code></pre>
+<h4 id="faction">Faction</h4>
+<pre><code class="language-Markdown">-- Desc: Download your faction, needs to be downloaded so it can be cached
+
+local rank = Wosa.Character.Job.Faction.Download(JobName --[[ string ]])
+</code></pre>
+<pre><code class="language-Markdown">-- Desc: Gets the rank, Use this after you have downloaded for the first time.
+
+local rank = Wosa.Character.Job.Faction.Rank(JobName --[[ string ]])
+</code></pre>
+<pre><code class="language-Markdown">-- Desc: Gets the sub rank, like a callsign or similar, can be used for anything.
+
+local subRank = Wosa.Character.Job.Faction.SubRank(JobName --[[ string ]])
+</code></pre>
+<h4 id="inventory">Inventory</h4>
+<pre><code class="language-Markdown">local inventory = Wosa.Character.Inventory.Get()
+</code></pre>
+<pre><code class="language-Markdown">local cash = Wosa.Character.Inventory.Cash()
+</code></pre>
+<h4 id="players">Players</h4>
+<pre><code class="language-Markdown">local player = Wosa.Game.ClosestPlayer()
+</code></pre>
+<pre><code class="language-Markdown">local players = Wosa.Game.Players()
+</code></pre>
+<pre><code class="language-Markdown">local playersInArea = Wosa.Game.PlayersArea()
+</code></pre>
+<h4 id="vehicle">Vehicle</h4>
+<pre><code class="language-Markdown">local fuel = Wosa.Game.Vehicle.GetFuel(Vehicle --[[ int ]])
+</code></pre>
+<pre><code class="language-Markdown">Wosa.Game.Vehicle.SetFuel(Vehicle --[[ int ]], Amount --[[ int ]])
+</code></pre>
+<pre><code class="language-Markdown">local haveAnyExtras = Wosa.Game.Vehicle.HaveExtras(Vehicle --[[ int ]])
+</code></pre>
+<pre><code class="language-Markdown">-- Desc: Convert the vehicle into a table, can be used to store the vehicle in the database etc.
+
+local data = Wosa.Game.Vehicle.ToData(Vehicle --[[ int ]])
+</code></pre>
+<pre><code class="language-Markdown">local vehicle = Wosa.Game.Vehicle.CreateFromData(Data --[[ table ]], X --[[ int ]], Y --[[ int ]], Z --[[ int ]], H --[[ int ]], DontNetwork --[[ bool ]], SpecialData --[[ table ]])
+</code></pre>
+<pre><code class="language-Markdown">local vehicle = Wosa.Game.Vehicle.Create(VehicleName --[[ string ]], Coords --[[ vector3/vector4/table ]], Data --[[ table ]], Network --[[ bool ]], Heading --[[ int ]])
+</code></pre>
+<pre><code class="language-Markdown">local cruiseEnabled = Wosa.Game.Vehicle.isCruiseEnabled()
+</code></pre>
+<pre><code class="language-Markdown">Wosa.Game.Vehicle.Engine(Vehicle --[[ int ]])
+</code></pre>
+<h4 id="vehicle-flags">Vehicle Flags</h4>
+<pre><code class="language-Markdown">--[[
+    ENUM TYPES (USE INT)
+    1 = DISABLE_GARAGE_STORAGE_FOR_VEHICLE
+    2 = DISABLE_LS_CUSTOMS_FOR_VEHICLE
+
+    You can create own ones of course but these are the official.
+]]
+</code></pre>
+<pre><code class="language-Markdown">Wosa.Game.Vehicle.Flag.Set(Vehicle --[[ int ]], Flag --[[ int ]])
+</code></pre>
+<pre><code class="language-Markdown">Wosa.Game.Vehicle.Flag.Remove(Vehicle --[[ int ]], Flag --[[ int ]])
+</code></pre>
+<pre><code class="language-Markdown">Wosa.Game.Vehicle.Flag.ClearAll(Vehicle --[[ int ]])
+</code></pre>
+<pre><code class="language-Markdown">Wosa.Game.Vehicle.Flag.Get(Vehicle --[[ int ]], Flag --[[ int ]])
+</code></pre>
+<pre><code class="language-Markdown">--[[
+    Example:
+
+    Wosa.Game.Vehicle.Flag.Set(vehicle, 3)
+
+    if Wosa.Game.Vehicle.Flag.Get(vehicle, 3) then
+        print('Flag exists!')
+    end
+]]
+</code></pre>
+<h4 id="request">Request</h4>
+<pre><code class="language-Markdown">Wosa.Game.Request.Dict(Dict --[[ string ]])
+</code></pre>
+<pre><code class="language-Markdown">Wosa.Game.Request.Walk(Dict --[[ string ]])
+</code></pre>
+<pre><code class="language-Markdown">Wosa.Game.Request.Ped(PedModelName --[[ string ]])
+</code></pre>
+<pre><code class="language-Markdown">-- Desc: This is hopefully gonna get removed soon so use &quot;Wosa.Game.Request.Model&quot; instead as that supports both hash and model name hehe now.
+
+Wosa.Game.Request.ModelHash(ModelHash --[[ string ]])
+</code></pre>
+<pre><code class="language-Markdown">Wosa.Game.Request.Model(Model --[[ string ]])
+</code></pre>
+<h4 id="ped">Ped</h4>
+<pre><code class="language-Markdown">-- Desc: Revives your ped if your dead.
+
+Wosa.Game.Ped.Revive()
+</code></pre>
+<pre><code class="language-Markdown">-- Desc: Respawn your ped if your dead.
+
+Wosa.Game.Ped.Respawn()
+</code></pre>
+<pre><code class="language-Markdown">Wosa.Game.Ped.Create(PedName --[[ string ]], Coords --[[ vector3/vector4/table ]], Data --[[ table ]], Network --[[ bool ]], Heading --[[ int ]])
+</code></pre>
+<pre><code class="language-Markdown">-- Desc: gotta have a EUP file loaded into your resource. Take a look at how the police job did it.
+
+Wosa.Game.Ped.LoadEUP(EUPOutfit --[[ string ]])
+</code></pre>
+<pre><code class="language-Markdown">Wosa.Game.Ped.Clothing(Arms --[[ int ]], Arms_tex --[[ int ]], Undershirt --[[ int ]], Undershirt_tex --[[ int ]], Top --[[ int ]], Top_tex --[[ int ]], Pants --[[ int ]], Pants_tex --[[ int ]], Shoes --[[ int ]], Shoes_tex --[[ int ]], Neck --[[ int ]], Neck_tex --[[ int ]])
+</code></pre>
+<pre><code class="language-Markdown">-- Desc: The &quot;OnlyIf&quot; bool can be used so only if &quot;OnlyIf&quot; is true will it get set etc, it is kinda logical once you play around with it.
+
+Wosa.Game.Ped.Cuff(Cuff --[[ bool ]], OnlyIf --[[ bool ]])
+</code></pre>
+<pre><code class="language-Markdown">local isCuffed = Wosa.Game.Ped.isCuffed()
+</code></pre>
+<pre><code class="language-Markdown">-- Desc: The &quot;Source&quot; is the &quot;dragger&quot; so to say.
+
+Wosa.Game.Ped.Drag(Drag --[[ bool ]], Source --[[ int ]])
+</code></pre>
+<pre><code class="language-Markdown">-- Desc: Seats your ped.
+
+Wosa.Game.Ped.Seat()
+</code></pre>
+<pre><code class="language-Markdown">Wosa.Game.Ped.UnSeat()
+</code></pre>
+<pre><code class="language-Markdown">-- Desc: Search a player, you will get up a little menu as well.
+
+Wosa.Game.Ped.Search(Player --[[ int ]])
+</code></pre>
+<pre><code class="language-Markdown">-- Desc: If your ped is giving up by putting up the hands etc.
+
+local surrendering = Wosa.Game.Ped.GivenUp()
+</code></pre>
+<h4 id="weapon">Weapon</h4>
+<pre><code class="language-Markdown">-- Desc: Can get the weapon table by returning &quot;Wosa.Game.Ped.Weapon.Get()&quot;.
+
+Wosa.Game.Ped.Weapon.Set(WeaponData --[[ table ]])
+</code></pre>
+<pre><code class="language-Markdown">local weaponData = Wosa.Game.Ped.Weapon.Get()
+</code></pre>
+<h4 id="camera">Camera</h4>
+<pre><code class="language-Markdown">-- Desc: &quot;Extra_data&quot; can be &quot;{new_fov = 50.0}&quot; etc and/or &quot;{fade = true}&quot;.
+
+Wosa.Game.Camera.View(X --[[ int ]], Y --[[ int ]], Z --[[ int ]], RX --[[ int ]], RY --[[ int ]], RZ --[[ int ]], Extra_data --[[ table ]])
+</code></pre>
+<pre><code class="language-Markdown">-- Desc: Animate a camera slide between two coords. Yes I know its retarded should be vec3 coords instead heh. &quot;Extra_data&quot; used the same as above, Only thing extra is that you can use &quot;{skip = true}&quot; to skip the &quot;wait until no camera is active thing&quot;.
+
+Wosa.Game.Camera.Animated(X --[[ int ]], Y --[[ int ]], Z --[[ int ]], RX --[[ int ]], YX --[[ int ]], ZX --[[ int ]], X2 --[[ int ]], Y2 --[[ int ]], Z2 --[[ int ]], RX2 --[[ int ]], RY2 --[[ int ]], RZ2 --[[ int ]], Duration --[[ int ]], Extra_data --[[ table ]])
+</code></pre>
+<pre><code class="language-Markdown">-- Desc: Stop all scripting cameras.
+
+Wosa.Game.Camera.StopAll()
+</code></pre>
+<h4 id="screen">Screen</h4>
+<pre><code class="language-Markdown">-- Desc: You can leave &quot;ShowType&quot; nil or anything, but you can however *set* it if you choose, its for the native &quot;EndTextCommandBusyspinnerOn&quot;.
+
+Wosa.Game.Screen.Wheel(ShowText --[[ string ]], ShowTime --[[ int ]], ShowType --[[ int ]])
+</code></pre>
+<pre><code class="language-Markdown">Wosa.Game.Screen.HelpTextTimer(Text1 --[[ string ]], Text2 --[[ string ]], Text3 --[[ string ]], Duration --[[ int ]])
+</code></pre>
+<pre><code class="language-Markdown">Wosa.Game.Screen.HelpText(Text --[[ string ]])
+</code></pre>
+<pre><code class="language-Markdown">Wosa.Game.Screen.MissionText(Text --[[ string ]], Duration --[[ int ]])
+</code></pre>
+<pre><code class="language-Markdown">Wosa.Game.Screen.Notification(Text --[[ string ]])
+</code></pre>
+<pre><code class="language-Markdown">local input = Wosa.Game.Screen.Input(TextEntry --[[ string ]], ExampleText --[[ string ]], MaxStringLenght --[[ int ]])
+</code></pre>
+<pre><code class="language-Markdown">Wosa.Game.Screen.Text(X --[[ float ]], Y --[[ float ]], Width --[[ float ]], Height --[[ float ]], Scale --[[ float ]], Text --[[ string ]], R --[[ int ]], G --[[ int ]], B --[[ int ]], A --[[ int ]], Font --[[ int ]], Centre --[[ bool ]])
+</code></pre>
+<pre><code class="language-Markdown">Wosa.Game.Screen.Text3DTimer(X --[[ float ]], Y --[[ float ]], Z --[[ float ]], Text --[[ string ]], Ms --[[ int ]])
+</code></pre>
+<pre><code class="language-Markdown">Wosa.Game.Screen.Text3D(X --[[ float ]], Y --[[ float ]], Z --[[ float ]], Text --[[ string ]])
+</code></pre>
+<h4 id="hud">Hud</h4>
+<pre><code class="language-Markdown">local isHudDisplayed = Wosa.Game.Screen.Hud.Active()
+</code></pre>
+<pre><code class="language-Markdown">-- Desc: Run this each tick to block the hud from wosa and other stuff such as map.
+
+Wosa.Game.Screen.Hud.Block()
+</code></pre>
+<pre><code class="language-Markdown">Wosa.Game.Screen.Hud.Configure(HideFuel --[[ bool ]], HideThirst --[[ bool ]], HideHunger --[[ bool ]])
+</code></pre>
+<pre><code class="language-Markdown">Wosa.Game.Screen.Hud.NewTextBar(Title --[[ string ]], Text --[[ string ]], Pos --[[ int ]])
+</code></pre>
+<pre><code class="language-Markdown">local hideFuel, hideThirst, hideHunger = Wosa.Game.Screen.Hud.GetSettings()
+</code></pre>
+<pre><code class="language-Markdown">-- Will only work for official wosa resources sadly unless you modify this native.
+
+local anyMenuOpened = Wosa.Game.Screen.Hud.AnyMenuOpened()
+</code></pre>
+<h4 id="world-instance">World Instance</h4>
+<pre><code class="language-Markdown">local WorldID = Wosa.Game.World.Get()
+</code></pre>
+<pre><code class="language-Markdown">Wosa.Game.World.Set(WorldID --[[ id ]])
+</code></pre>
+<pre><code class="language-Markdown">-- Desc: Sets back to the default world.
+
+Wosa.Game.World.Clear()
+</code></pre>
+<h4 id="scaleform">Scaleform</h4>
+<pre><code class="language-Markdown">Wosa.Game.Scaleform.Announcement(Time --[[ int ]], Header --[[ string ]], Text --[[ string ]])
+</code></pre>
+<h4 id="atc">Atc</h4>
+<pre><code class="language-Markdown">Wosa.Game.Atc.SetFlightMode(Mode --[[ int? ]], Callsign --[[ string ]], Original_airport --[[ string ]], Atc_header --[[ string ]], Vehicle -- [[ int ]])
+</code></pre>
+<pre><code class="language-Markdown">Wosa.Game.Atc.PreSetAtc(Freq --[[ float ]], Freqfake --[[ float ]], Stationary --[[ bool ]])
+</code></pre>
+<pre><code class="language-Markdown">-- Desc: Disable the ATC window.
+
+Wosa.Game.Atc.DisableWindow(bool --[[ bool ]])
+</code></pre>
+<pre><code class="language-Markdown">local vehicle = Wosa.Game.Atc.Aircraft()
+</code></pre>
+<pre><code class="language-Markdown">local isStationary = Wosa.Game.Atc.Stationary()
+</code></pre>
+<pre><code class="language-Markdown">local freq = Wosa.Game.Atc.Freq()
+</code></pre>
+<pre><code class="language-Markdown">local airport = Wosa.Game.Atc.Airport()
+</code></pre>
+<pre><code class="language-Markdown">local gate = Wosa.Game.Atc.Gate()
+</code></pre>
+<pre><code class="language-Markdown">local runway = Wosa.Game.Atc.GetTaxiToRunway()
+</code></pre>
+<h4 id="other">Other</h4>
+<pre><code class="language-Markdown">-- Disable/Enable the homescreen button in the character menu.
+
+Wosa.Misc.Homescreen(CanUse --[[ bool ]])
+</code></pre>
+<pre><code class="language-Markdown">-- Return the keybind config from wosa_core (https://github.com/WosaFramework/Framework/blob/master/wosa_core/scripting/scripting_configs/Keybinds_config.lua).
+
+local keybinds = Wosa.Misc.Keybinds()
+</code></pre>
+<pre><code class="language-Markdown">local languages = Wosa.Translate.Get()
+</code></pre>
+<pre><code class="language-Markdown">local current_language = Wosa.Translate.Language()
+</code></pre></div>
+                <footer>
+    <div class="footer-buttons">
+        <div class="previous"><a href="../natives_server/" title="Server Natives"><span>Previous</span></a></div>
+        <div class="next"><a href="../../events/events_server/" title="Server Events"><span>Next</span></a></div>
+    </div>
+    <div class="footer-note">
+        <p>
+            Built with <a href="http://www.mkdocs.org">MkDocs</a> using
+            <a href="https://github.com/daizutabi/mkdocs-ivory">Ivory theme</a>.
+        </p>
+    </div>
+</footer>
+            </div>
+        </main>
+    </div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js"></script>
+    <script src="../../search/main.js"></script>
+</body>
+
+</html>
