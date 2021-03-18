@@ -7,7 +7,10 @@ copyright: Copyright; 2019-2021 Wosa Framework
 docs_dir: docs
 strict: true
 
-theme: ivory
+theme:
+  name: ivory
+  custom_dir: site
+
 repo_url: https://github.com/WosaFramework/Docs/
 repo_name: GitHub
 
