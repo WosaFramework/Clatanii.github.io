@@ -1,5 +1,5 @@
-# API Scripting
-General documentation for scripting and understanding the core. The API can both be found on the server and the client, Most seen on the server all though.
+# Base Functions
+The most *base* functions, Functions that are related directly to the core of the framework. Should be used with caution.
 
 #### Classes
 Classes are used within the core API to isolete different classes and code from each other.

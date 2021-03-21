@@ -1,4 +1,4 @@
-site_name: Wosa Documentation
+site_name: Wosa Docs
 site_description: Official Wosa Documentation
 site_author: Wosa.Core.Development
 
@@ -16,22 +16,28 @@ repo_name: GitHub
 
 nav:
     - 'Home' : 'index.md'
+    - 'F.A.Q' : 'faq.md'
 
     - 'Installation' :
       - 'How to install' : 'install/install.md'
       - 'Troubleshooting' : 'install/troubleshooting.md'
     
-    - 'Connector API' :
-      - 'Setup' : 'connector/setup.md'
-      - 'Server Natives' : 'connector/natives_server.md'
-      - 'Client Natives' : 'connector/natives_client.md'
+    - 'Scripting' :
+      - 'Connector' :
+        - 'Setup' : 'connector/setup.md'
+        - 'Server Natives' : 'connector/natives_server.md'
+        - 'Client Natives' : 'connector/natives_client.md'
 
-    - 'Events' :
-      - 'Server Events' : 'events/events_server.md'
-      - 'Client Events' : 'events/events_client.md'
+      - 'Events' :
+        - 'Server Events' : 'events/events_server.md'
+        - 'Client Events' : 'events/events_client.md'
 
-    - 'Core API' :
-      - 'Introduction' : 'core/introduction.md'
-      - 'API Scripting' : 'core/api.md'
-      - 'System Log' : 'core/system_log.md'
-      - 'External Scripts' : 'core/external.md'
+      - 'Core' :
+        - 'Introduction' : 'core/introduction.md'
+        - 'API Functions' : 'core/api.md'
+        - 'System Log' : 'core/system_log.md'
+        - 'External Scripts' : 'core/external.md'
+
+        - 'Core Natives' :
+          - 'Server Natives' : 'core/server_natives.md'
+          - 'Client Natives' : 'core/client_natives.md'
