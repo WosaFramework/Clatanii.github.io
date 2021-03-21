@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Wosa.Core.Development">
     <link rel="shortcut icon" href="../../img/favicon.ico">
-    <title>Introduction &mdash; Wosa Documentation</title>
+    <title>Introduction &mdash; Wosa Docs</title>
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css">
     <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.1/css/all.css">
@@ -27,7 +27,7 @@
             <div class="home">
                 <div class="title">
                     <button class="hamburger"></button>
-                    <a href="../.." class="site-name"> Wosa Documentation</a>
+                    <a href="../.." class="site-name"> Wosa Docs</a>
                 </div>
                 <div class="search">
                     <div role="search">
@@ -40,31 +40,40 @@
             <nav class="nav">
                 <ul class="root">
                     <li class="toctree-l1"><a class="nav-item" href="../..">Home</a></li>
+                    <li class="toctree-l1"><a class="nav-item" href="../../faq/">F.A.Q</a></li>
                     <li class="toctree-l1"><button class="section nav-item">Installation</button>
 <ul class="subnav">
     <li class="toctree-l2"><a class="nav-item" href="../../install/install/">How to install</a></li>
     <li class="toctree-l2"><a class="nav-item" href="../../install/troubleshooting/">Troubleshooting</a></li>
 </ul></li>
-                    <li class="toctree-l1"><button class="section nav-item">Connector API</button>
+                    <li class="toctree-l1"><button class="section nav-item">Scripting</button>
 <ul class="subnav">
-    <li class="toctree-l2"><a class="nav-item" href="../../connector/setup/">Setup</a></li>
-    <li class="toctree-l2"><a class="nav-item" href="../../connector/natives_server/">Server Natives</a></li>
-    <li class="toctree-l2"><a class="nav-item" href="../../connector/natives_client/">Client Natives</a></li>
+    <li class="toctree-l2"><button class="section nav-item hide">Connector</button>
+<ul class="subnav hide">
+    <li class="toctree-l3"><a class="nav-item" href="../../connector/setup/">Setup</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../connector/natives_server/">Server Natives</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../connector/natives_client/">Client Natives</a></li>
 </ul></li>
-                    <li class="toctree-l1"><button class="section nav-item">Events</button>
-<ul class="subnav">
-    <li class="toctree-l2"><a class="nav-item" href="../../events/events_server/">Server Events</a></li>
-    <li class="toctree-l2"><a class="nav-item" href="../../events/events_client/">Client Events</a></li>
+    <li class="toctree-l2"><button class="section nav-item hide">Events</button>
+<ul class="subnav hide">
+    <li class="toctree-l3"><a class="nav-item" href="../../events/events_server/">Server Events</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../events/events_client/">Client Events</a></li>
 </ul></li>
-                    <li class="toctree-l1"><button class="section nav-item">Core API</button>
+    <li class="toctree-l2 current"><button class="section nav-item">Core</button>
 <ul class="subnav">
-    <li class="toctree-l2 current"><a class="nav-item current" href="./">Introduction</a>
+    <li class="toctree-l3 current"><a class="nav-item current" href="./">Introduction</a>
 <ul class="subnav">
-<li class="toctree-l3"><a class="nav-item toc" href="#enabling-development-features">Enabling Development Features</a></li>
+<li class="toctree-l4"><a class="nav-item toc" href="#enabling-development-features">Enabling Development Features</a></li>
 </ul></li>
-    <li class="toctree-l2"><a class="nav-item" href="../api/">API Scripting</a></li>
-    <li class="toctree-l2"><a class="nav-item" href="../system_log/">System Log</a></li>
-    <li class="toctree-l2"><a class="nav-item" href="../external/">External Scripts</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../api/">API Functions</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../system_log/">System Log</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../external/">External Scripts</a></li>
+    <li class="toctree-l3"><button class="section nav-item hide">Core Natives</button>
+<ul class="subnav hide">
+    <li class="toctree-l4"><a class="nav-item" href="../server_natives/">Server Natives</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../client_natives/">Client Natives</a></li>
+</ul></li>
+</ul></li>
 </ul></li>
                 </ul>
             </nav>
@@ -80,12 +89,12 @@
         <main>
             <div class="home-top">
                 <button class="hamburger"></button>
-                <a href="../.." class="site-name"> Wosa Documentation</a>
+                <a href="../.." class="site-name"> Wosa Docs</a>
             </div>
             <div id="main">
                 <nav class="breadcrumbs">
 <ul>
-    <li>Core API</li>
+    <li>Scripting &raquo; </li><li>Core</li>
 </ul>
 </nav>
                 <div id="content"><h1 id="core-introduction">Core Introduction</h1>
@@ -99,7 +108,7 @@ set wosa.disable_api_ghostmode 1
                 <footer>
     <div class="footer-buttons">
         <div class="previous"><a href="../../events/events_client/" title="Client Events"><span>Previous</span></a></div>
-        <div class="next"><a href="../api/" title="API Scripting"><span>Next</span></a></div>
+        <div class="next"><a href="../api/" title="API Functions"><span>Next</span></a></div>
     </div>
     <div class="footer-note">
         <p>
