@@ -18,6 +18,8 @@ nav:
     - 'Home' : 'index.md'
     - 'F.A.Q' : 'faq.md'
 
+    - 'UpdateFFX' : 'updateffx.md'
+
     - 'Installation' :
       - 'How to install' : 'install/install.md'
       - 'Troubleshooting' : 'install/troubleshooting.md'
