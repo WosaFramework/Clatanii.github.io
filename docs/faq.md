@@ -17,4 +17,4 @@ Answer: Not straight out of the box, It is possible however if you modify the sc
 Answer: Yes you can! Use the **_API Connector_** native set to use/access wosa functions, Documented events are also available.
 
 **Question: How do I keep my files updated without loosing all of my configs?**  
-Answer: Use our **_ServerFFX_** program for that.
+Answer: Use our **_UpdateFFX_** program for that.

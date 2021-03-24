@@ -44,7 +44,7 @@ Time to download all the required files to run the framework! Super easy, Just f
 
 1. You can either download the [latest](https://github.com/WosaFramework/releases) version or the [experimental](https://github.com/WosaFramework) version from our GitHub. *The experimental version might be unstable, broken or not working at all as it is the "test" version still under going heavy development.*
 2. Import the `import.sql` file from the download and **import** it to your database, There are loads of tutorials on the internet if you are unsure how to do it.
-3. Add all of the **wosa_** files to `/resources`, We strongly **recommend** you to create a sub folder within the `/resources` folder like this `/resources/[wosa]` to support our *ServerFFX* tool for example.
+3. Add all of the **wosa_** files to `/resources`, We strongly **recommend** you to create a sub folder within the `/resources` folder like this `/resources/[wosa]` to support our *UpdateFFX* tool for example.
 
 ### Final
 You server is ready for some roleplay, Thank you for supporting this project! **If you have are experiencing any issues we advise you to take a look at [troubleshooting](troubleshooting.md).**
