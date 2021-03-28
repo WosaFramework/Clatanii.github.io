@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Wosa.Core.Development">
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <title>F.A.Q &mdash; Wosa Docs</title>
+    <title>UpdateFFX &mdash; Wosa Docs</title>
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css">
     <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.1/css/all.css">
@@ -40,10 +40,13 @@
             <nav class="nav">
                 <ul class="root">
                     <li class="toctree-l1"><a class="nav-item" href="..">Home</a></li>
-                    <li class="toctree-l1 current"><a class="nav-item current" href="./">F.A.Q</a>
+                    <li class="toctree-l1"><a class="nav-item" href="../faq/">F.A.Q</a></li>
+                    <li class="toctree-l1 current"><a class="nav-item current" href="./">UpdateFFX</a>
 <ul class="subnav">
+<li class="toctree-l2"><a class="nav-item toc" href="#what-is-updateffx">What is "UpdateFFX"?</a></li>
+<li class="toctree-l2"><a class="nav-item toc" href="#how-to-download">How to download</a></li>
+<li class="toctree-l2"><a class="nav-item toc" href="#preventing-issues">Preventing issues</a></li>
 </ul></li>
-                    <li class="toctree-l1"><a class="nav-item" href="../updateffx/">UpdateFFX</a></li>
                     <li class="toctree-l1"><button class="section nav-item">Installation</button>
 <ul class="subnav">
     <li class="toctree-l2"><a class="nav-item" href="../install/install/">How to install</a></li>
@@ -81,8 +84,8 @@
     <div class="link">
         <a href="https://github.com/WosaFramework/Docs/" class="fa fa-github"> GitHub</a>
     </div>
-    <div class="previous"><a href="..">&laquo; Previous</a></div>
-    <div class="next"><a href="../updateffx/">Next &raquo;</a></div>
+    <div class="previous"><a href="../faq/">&laquo; Previous</a></div>
+    <div class="next"><a href="../install/install/">Next &raquo;</a></div>
 </div>
         </aside>
         <div id="spacer"><button class="arrow"></button></div>
@@ -97,24 +100,23 @@
     
 </ul>
 </nav>
-                <div id="content"><h1 id="frequently-asked-questions">Frequently Asked Questions</h1>
-<p>Frequently asked questions answered.</p>
-<p><strong>Question: Is this framework based off vRP, ESX or any other framework?</strong><br />
-Answer: No this framework is completely standalone and scratch built.</p>
-<p><strong>Question: What language is this framework made in?</strong><br />
-Answer: This framework is built in the scripting language Lua.</p>
-<p><strong>Question: Is the source code of the framework obfuscated?</strong><br />
-Answer: No, All of our customers can edit the source code how they want and is not "obfuscated" in any way.</p>
-<p><strong>Question: Can I use ESX scripts or vRP scripts with this framework?</strong><br />
-Answer: Not straight out of the box, It is possible however if you modify the script with the <strong><em>API Connector</em></strong> native set.</p>
-<p><strong>Question: Can I create my own extensions?</strong><br />
-Answer: Yes you can! Use the <strong><em>API Connector</em></strong> native set to use/access wosa functions, Documented events are also available.</p>
-<p><strong>Question: How do I keep my files updated without loosing all of my configs?</strong><br />
-Answer: Use our <strong><em>UpdateFFX</em></strong> program for that.</p></div>
+                <div id="content"><h1 id="updateffx-guide">UpdateFFX Guide</h1>
+<p>Lets learn how to use our UpdateFFX and what it is!</p>
+<h2 id="what-is-updateffx">What is "UpdateFFX"?</h2>
+<p>UpdateFFX which stands for <strong>Update Framework FxServer</strong> is essentially a program which is used by server owners to update the framework when a new version is released on <a href="https://github.com/WosaFramework/Framework">GitHub</a>. The key difference with using our tool is that you will have all of your <strong>configuration files automatically saved</strong> so you dont have to save them manually before downloading a new update. <em>The tool is only designed to be used on Windows and is only properly tested on Windows 10.</em></p>
+<p><img alt="" src="../assets/updateffx-pic.png" style="height:30%;width:30%" /></p>
+<h2 id="how-to-download">How to download</h2>
+<p>You will only have to download our <strong><a href="http://51.89.151.164:8080/UpdateFFX/setup.exe">setup.exe</a></strong> file and run that and your good to go! Updates of the program itself are handled automatically on the launch. Note that your computer might think that this is a virus or something bad even though it is not :(</p>
+<h2 id="preventing-issues">Preventing issues</h2>
+<ul>
+<li>Do not have wosa resource scripts in the open <code>resources/</code> folder, Instead isolate them into a catogory such as <code>resources/[wosa]/</code>.</li>
+<li>Always make sure that your server is off before updating any wosa related resource as the program might not be able to handle files that are already in use by the server.</li>
+<li>Do never close the program while you are updating as that might screw up, delete or put your files into a unrecoverably state, Just wait it out.</li>
+</ul></div>
                 <footer>
     <div class="footer-buttons">
-        <div class="previous"><a href=".." title="Home"><span>Previous</span></a></div>
-        <div class="next"><a href="../updateffx/" title="UpdateFFX"><span>Next</span></a></div>
+        <div class="previous"><a href="../faq/" title="F.A.Q"><span>Previous</span></a></div>
+        <div class="next"><a href="../install/install/" title="How to install"><span>Next</span></a></div>
     </div>
     <div class="footer-note">
         <p>
