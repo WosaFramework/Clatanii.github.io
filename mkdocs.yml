@@ -14,6 +14,9 @@ theme:
 repo_url: https://github.com/WosaFramework/Docs/
 repo_name: GitHub
 
+markdown_extensions:
+  - markdown.extensions.attr_list
+
 nav:
     - 'Home' : 'index.md'
     - 'F.A.Q' : 'faq.md'
