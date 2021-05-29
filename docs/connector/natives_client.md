@@ -563,6 +563,27 @@ local gate = Wosa.Game.Atc.Gate()
 local runway = Wosa.Game.Atc.GetTaxiToRunway()
 ```
 
+#### VehicleAI version-1.0
+Eh, works fine for more basic stuff and for a few vehicles at the same time (1-3) but the upcoming 2.0 version will be better ;p
+
+```Markdown
+Wosa.Game.Vehicle.AI.Attach(entity --[[ int ]], function(vehicle --[[ int ]], data --[[ table ]])
+
+end)
+```
+
+```Markdown
+Wosa.Game.Vehicle.AI.Avoidance(data --[[ table ]], vehicle --[[ int ]], speed --[[ float ]], function(vehicle --[[ int ]], data --[[ table ]], speed --[[ float ]])
+
+end)
+```
+
+```Markdown
+Wosa.Game.Vehicle.AI.Task(data --[[ table ]], vehicle --[[ int ]], task --[[ string ]], speed --[[ float ]], function(data --[[ table ]], vehicle --[[ int ]], task --[[ string ]])
+
+end)
+```
+
 #### Other
 
 ```Markdown
