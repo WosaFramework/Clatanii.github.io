@@ -1,6 +1,8 @@
 # Wosa Documentation
 Welcome to the official documentation page, on this website you can find useful guides and information related to the technical aspects of the framework.
 
+![](assets/snaily-legend.png){: style="height:20%;width:20%"}
+
 ## What's on your mind?
 * Are you looking for how to **[install](install/install.md)** the framework?
 * Oh, Maybe you are looking for how to use the **[UpdateFFX](updateffx.md)** tool to update your server easier!
