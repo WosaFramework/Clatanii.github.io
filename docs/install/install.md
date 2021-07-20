@@ -33,16 +33,18 @@ ensure mysql-async
 ensure eup-stream
 ensure wosa_core
 ensure wosa_jobs
+ensure wosa_assets # This is required unless you change police & fire configs to your own vehicles.
 
 # recommended but not required
 ensure wosa_hud
 ensure wosa_chat
+
 ```
 
 ### Download
 Time to download all the required files to run the framework! Super easy, Just follow these steps!
 
-1. You can either download the [latest](https://github.com/WosaFramework/releases) version or the [experimental](https://github.com/WosaFramework) version from our GitHub. *The experimental version might be unstable, broken or not working at all as it is the "test" version still under going heavy development.*
+1. You can either download the [latest](https://github.com/WosaFramework/Framework/releases) version or the [experimental (click to download)](https://github.com/WosaFramework/Framework/archive/refs/heads/master.zip) version from our GitHub. *The experimental version might be unstable, broken or not working at all as it is the "test" version still under going heavy development.*
 2. Import the `import.sql` file from the download and **import** it to your database, There are loads of tutorials on the internet if you are unsure how to do it.
 3. Add all of the **wosa_** files to `/resources`, We strongly **recommend** you to create a sub folder within the `/resources` folder like this `/resources/[wosa]` to support our *UpdateFFX* tool for example.
 

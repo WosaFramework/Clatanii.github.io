@@ -7,7 +7,7 @@ UpdateFFX which stands for **Update Framework FxServer** is essentially a progra
 ![](assets/updateffx-pic.png){: style="height:30%;width:30%"}
 
 ## How to download
-You will only have to download our **[setup.exe](http://51.89.151.164:8080/UpdateFFX/setup.exe)** file and run that and your good to go! Updates of the program itself are handled automatically on the launch. Note that your computer might think that this is a virus or something bad even though it is not :(
+You will only have to download our **[setup.exe](http://51.89.151.164:8080/ServerFFX/setup.exe)** file and run that and your good to go! Updates of the program itself are handled automatically on the launch. Note that your computer might think that this is a virus or something bad even though it is not :(
 
 ## Preventing issues
 * Do not have wosa resource scripts in the open `resources/` folder, Instead isolate them into a catogory such as `resources/[wosa]/`.
