@@ -1,7 +1,7 @@
 # Wosa Documentation
 Welcome to the official documentation page, on this website you can find useful guides and information related to the technical aspects of the framework.
 
-![](assets/snaily-legend.png){: style="height:20%;width:20%"}
+![](assets/test.gif){: style="height:10%;width:10%"}
 
 ## What's on your mind?
 * Are you looking for how to **[install](install/install.md)** the framework?

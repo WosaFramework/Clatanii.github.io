@@ -32,6 +32,7 @@ nav:
         - 'Setup' : 'connector/setup.md'
         - 'Server Natives' : 'connector/natives_server.md'
         - 'Client Natives' : 'connector/natives_client.md'
+        - 'Script Examples' : 'connector/examples.md'
 
       - 'Events' :
         - 'Server Events' : 'events/events_server.md'
