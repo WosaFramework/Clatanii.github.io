@@ -54,16 +54,13 @@
     <li class="toctree-l3"><a class="nav-item" href="../setup/">Setup</a></li>
     <li class="toctree-l3 current"><a class="nav-item current" href="./">Server Natives</a>
 <ul class="subnav">
-<li class="toctree-l4"><a class="nav-item toc" href="#user">User</a></li>
-<li class="toctree-l4"><a class="nav-item toc" href="#anticheat">AntiCheat</a></li>
-<li class="toctree-l4"><a class="nav-item toc" href="#permission">Permission</a></li>
-<li class="toctree-l4"><a class="nav-item toc" href="#money">Money</a></li>
-<li class="toctree-l4"><a class="nav-item toc" href="#character">Character</a></li>
-<li class="toctree-l4"><a class="nav-item toc" href="#faction">Faction</a></li>
-<li class="toctree-l4"><a class="nav-item toc" href="#inventory">Inventory</a></li>
-<li class="toctree-l4"><a class="nav-item toc" href="#other">Other</a></li>
+<li class="toctree-l4"><a class="nav-item toc" href="#tools-functions">»  Tools Functions</a></li>
+<li class="toctree-l4"><a class="nav-item toc" href="#translate-functions">»  Translate Functions</a></li>
+<li class="toctree-l4"><a class="nav-item toc" href="#user-functions">»  User Functions</a></li>
+<li class="toctree-l4"><a class="nav-item toc" href="#character-functions">»  Character Functions</a></li>
 </ul></li>
     <li class="toctree-l3"><a class="nav-item" href="../natives_client/">Client Natives</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../examples/">Script Examples</a></li>
 </ul></li>
     <li class="toctree-l2"><button class="section nav-item hide">Events</button>
 <ul class="subnav hide">
@@ -105,197 +102,287 @@
     <li>Scripting &raquo; </li><li>Connector</li>
 </ul>
 </nav>
-                <div id="content"><h1 id="server-natives">Server Natives</h1>
-<p>Server classed Wosa natives to be used with the API connector.</p>
-<h4 id="user">User</h4>
-<pre><code class="language-Markdown">-- Desc: Used to get the r* license, Main used identifier in Wosa.
+                <div id="content"><h1 id="server-api-natives">Server-API Natives</h1>
+<p>Functions that are attached to the server-api set. This page is automated from <a href="https://github.com/WosaFramework/Framework/blob/master/wosa_core/scripting/scripting_api/resource_api_v2/public_api_server.lua">public_api_server.lua</a>.</p>
+<h4 id="tools-functions">»  Tools Functions</h4>
+<h6 id="general">╚  General</h6>
+<pre><code class="language-Markdown">**formated = Wosa.Tools.ConvertSQLDateToLuaFormat(unix)**
 
-local license = Wosa.User.License(ID --[[ int ]])
+Returnal:
+• (*string*) **formated:** the time in a new readable &quot;design&quot;. 
+
+Parameters:
+• (*number*) **unix:** the time and date in unix measurment.    
+
+Used to convert often SQL timestamps to a &quot;readable&quot; date.  
 </code></pre>
-<pre><code class="language-Markdown">-- Desc: Used to get the currently active character table or user table. The &quot;Type&quot; can either be &quot;i&quot; for inventory or &quot;c&quot; for character.
+<h4 id="translate-functions">»  Translate Functions</h4>
+<h6 id="general_1">╚  General</h6>
+<pre><code class="language-Markdown">**languages = Wosa.Translate.Get()**
 
-local Wosa.User.CurrentDB(ID --[[ int ]], Type --[[ string ]])
+Returnal:
+• (*table*) **languages:** the language data from the core. 
 </code></pre>
-<pre><code class="language-Markdown">-- Desc: If you are looking to return a player id from a license you can use this function, This will return nil if the player is not active on the server.
+<pre><code class="language-Markdown">**language = Wosa.Translate.Language()**
 
-local ID = P_API.User.UserFromLicense(License --[[ string ]])
+Returnal:
+• (*string*) **language:** the current language used.   
 </code></pre>
-<pre><code class="language-Markdown">-- Desc: Will kick a user by the &quot;SYSTEM&quot;.
+<h4 id="user-functions">»  User Functions</h4>
+<h6 id="permission">╚  Permission</h6>
+<pre><code class="language-Markdown">**Wosa.User.Permission.Set(player, rank)**
 
-Wosa.User.Kick(ID --[[ int ]], Reason --[[ string ]])
+Parameters:
+• (*int*) **player:** the player id.    
+• (*string*) **rank:** the rank you want the player to receive. 
+
+The rank is required to be taken out of the [rank config](https://github.com/WosaFramework/Framework/blob/master/wosa_core/scripting/scripting_configs/Ranks_config.lua#L13) in your server.    
 </code></pre>
-<pre><code class="language-Markdown">-- Desc: Will permanent ban the user by the &quot;SYSTEM&quot;.
+<pre><code class="language-Markdown">**rank = Wosa.User.Permission.Get(player)**
 
-Wosa.User.Ban(ID --[[ int ]], Reason --[[ string ]])
+Returnal:
+• (*string*) **rank:** the permission level of the user, taken from session library.    
+
+Parameters:
+• (*int*) **player:** the player id.    
 </code></pre>
-<h4 id="anticheat">AntiCheat</h4>
-<pre><code class="language-Markdown">-- Desc: This native can be used to ban people from &quot;event&quot; abusing currently. Do not use this native for regular banning as this system will and might work differently.
+<h6 id="general_2">╚  General</h6>
+<pre><code class="language-Markdown">**Wosa.User.Ban(player, reason)**
 
-Wosa.Character.AntiCheat.Ban(ID --[[ int ]], Type --[[ string ]], Custom --[[ string ]])
+Parameters:
+• (*int*) **player:** the player id.    
+• (*string*) **reason:** the stated reason for the ban. 
 
--- Example:
-Wosa.Character.AntiCheat.Ban(1, &quot;event&quot;, &quot;MY_EVENT_HEHE&quot;)
+Permanent ban a user from the server.   
 </code></pre>
-<h4 id="permission">Permission</h4>
-<pre><code class="language-Markdown">-- Desc: Will return the users rank in the server.
+<pre><code class="language-Markdown">**license = Wosa.User.License(player)**
 
-local rank = Wosa.User.Permission.Get(ID --[[ int ]])
+Returnal:
+• (*string*) **license:** license identifier (r* license) of the user.  
+
+Parameters:
+• (*int*) **player:** the player id.    
 </code></pre>
-<pre><code class="language-Markdown">-- Desc: Will set the users rank. Needs to be a valid rank, If non valid they will not be available to join.
+<pre><code class="language-Markdown">**Wosa.User.Kick(player, reason)**
 
-local rank = Wosa.User.Permission.Set(ID --[[ int ]], Rank --[[ string ]])
+Parameters:
+• (*int*) **player:** the player id.    
+• (*string*) **reason:** the stated reason for the kick.    
+
+Kick a user off from the session, Will be kicked by SYSTEM and will be logged in the users history. 
 </code></pre>
-<h4 id="money">Money</h4>
-<pre><code class="language-Markdown">-- Desc: Used to remove money from any available payment method.
+<pre><code class="language-Markdown">**player = Wosa.User.UserFromLicense(license)**
 
-Wosa.Character.Money.RemoveFromAny(ID --[[ int ]], Amount --[[ int ]])
+Returnal:
+• (*int*) **player:** the player id.    
+
+Parameters:
+• (*string*) **license:** license identifier (r* license) of the user.  
+
+Often used when the player id is unkown, will return nil if the player is not active on the session.    
 </code></pre>
-<pre><code class="language-Markdown">-- Desc: Used to add money to any available payment method.
+<pre><code class="language-Markdown">**id = Wosa.User.CurrentDB(player, type)**
 
-Wosa.Character.Money.AddToAny(ID --[[ int ]], Amount --[[ int ]])
+Returnal:
+• (*string*) **id:** Get back the returned database table name for the current selected character.  
+
+Parameters:
+• (*int*) **player:** the player id.    
+• (*string*) **type:** the type of character &quot;id&quot;, &quot;i&quot; is inventory and &quot;c&quot; is character type, will just return character_? or inventory_?, used to fetch stuff from database. Valid ranges are ?_1-?_3 
+
+Used to retrieve the inventory or/and database &quot;id&quot; to do database calls and fetches as data is either stored on &quot;inventory/character_1/2/3&quot;, which is fucking stupid but it is what it is. 
 </code></pre>
-<pre><code class="language-Markdown">-- Desc: Via this function you can get a players avaliable &quot;payment methods&quot;.
+<h4 id="character-functions">»  Character Functions</h4>
+<h6 id="ped">╚  Ped</h6>
+<pre><code class="language-Markdown">**Wosa.Character.Ped.ReviveAnim(user, heading)**
 
-local methods = Wosa.Character.Money.Methods(ID --[[ int ]])
-
--- Example:
-print('Vanilla Card: '..tostring(methods[1]))
-print('Business Card: '..tostring(methods[2]))
-print('Cash: '..tostring(methods[3]))
+Parameters:
+• (*int*) **user:** the player id.  
+• (*number*) **heading:** The heading of the target 
 </code></pre>
-<pre><code class="language-Markdown">-- Desc: Check the money balance for a specific payment method.
+<h6 id="inventory">╚  Inventory</h6>
+<pre><code class="language-Markdown">**data = Wosa.Character.Inventory.Get(user)**
 
-local balance = Wosa.Character.Money.Balance(ID --[[ int ]], Method --[[ string ]])
+Returnal:
+• (*table*) **data:** the inventory table from database_?.  
 
--- Example:
-local balance = Wosa.Character.Money.Balance(ID, 'RE_Cash')
-
-print('The player has '..balance..' as balance as hand cash.')
+Parameters:
+• (*int*) **user:** the player id.  
 </code></pre>
-<pre><code class="language-Markdown">-- Desc: Removes money from a specific payment method.
+<h6 id="item">╚  Item</h6>
+<pre><code class="language-Markdown">**Wosa.Character.Inventory.Item.Remove(item_id, user, item_name)**
 
-Wosa.Character.Money.Remove(ID --[[ int ]], Method --[[ string ]], Amount --[[ int ]])
+Parameters:
+• (*int*) **item_id:** The item id  
+• (*int*) **user:** the player id.  
+• (*string*) **item_name:** The item name, NOT DISPLAY NAME 
+
+If you want to remove a specific item linked to an ID you can leave &quot;item_name&quot; as nil. If you want to do vice versa you can leave &quot;item_id&quot; as nil.    
 </code></pre>
-<pre><code class="language-Markdown">-- Desc: Add money to a specific payment method.
+<pre><code class="language-Markdown">**exist = Wosa.Character.Inventory.Item.Exist(user, item_name)**
 
-Wosa.Character.Money.Add(ID --[[ int ]], Method --[[ string ]], Amount --[[ int ]])
+Returnal:
+• (*bool*) **exist:** If the item exists from the fetch.    
+
+Parameters:
+• (*int*) **user:** the player id.  
+• (*string*) **item_name:** The item name   
 </code></pre>
-<pre><code class="language-Markdown">-- Desc: Set the money for a specific payment method.
+<pre><code class="language-Markdown">**Wosa.Character.Inventory.Item.RemoveAllCustom(user)**
 
-Wosa.Character.Money.Set(ID --[[ int ]], Method --[[ string ]], Amount --[[ int ]])
+Parameters:
+• (*int*) **user:** the player id.  
+
+Removes all items that can be dropped from the character, objects like id-card and pocket cash wont be removed. 
 </code></pre>
-<h4 id="character">Character</h4>
-<pre><code class="language-Markdown">-- Desc: Add driver license points to a players current character.
+<pre><code class="language-Markdown">**Wosa.Character.Inventory.Item.Add(item_data, user, license)**
 
-Wosa.Character.AddLicensePoints(ID --[[ int ]], Points --[[ int ]])
+Parameters:
+• (*table*) **item_data:** The item data, should be setup like the inventory_? struc in db. 
+• (*int*) **user:** the player id.  
+• (*string*) **license:** license identifier (r* license) of the user.  
 </code></pre>
-<pre><code class="language-Markdown">-- Desc: Return character data for a users current selected character. Table possible indexes:
-    -- firstname : string
-    -- middlename = : string
-    -- lastname = : string
-    -- day = : string
-    -- month =  : string
-    -- year = : int
-    -- gender = : string
-    -- phone_number : string
-    -- driver_license : bool
-    -- truck_license : bool
-    -- air_license : bool
-    -- boat_license : bool
-    -- firearm_license : string
-    -- job : string
+<h6 id="money">╚  Money</h6>
+<pre><code class="language-Markdown">**Wosa.Character.Money.Remove(player, method, amount)**
 
-local data = Wosa.Character.Data(ID --[[ int ]])
+Parameters:
+• (*int*) **player:** the player id.    
+• (*string*) **method:** the payment method.    
+• (*number*) **amount:** the amount of money.   
+
+Possible payment methods are RE_VanillaC, RE_BusinessC, RE_Cash.    
 </code></pre>
-<pre><code class="language-Markdown">-- Desc: Return characters data from first and lastname (from the database), will return the same table roughly as above ^^.
+<pre><code class="language-Markdown">**balance = Wosa.Character.Money.Balance(player, method)**
 
-local data = Wosa.Character.DataFromName(Firstname --[[ string ]], Lastname --[[ string ]])
+Returnal:
+• (*number*) **balance:** the balance on the payment method.    
+
+Parameters:
+• (*int*) **player:** the player id.    
+• (*string*) **method:** the payment method.    
+
+Possible payment methods are RE_VanillaC, RE_BusinessC, RE_Cash.    
 </code></pre>
-<pre><code class="language-Markdown">-- Desc: Returns all characters from the database.
+<pre><code class="language-Markdown">**Wosa.Character.Money.RemoveFromAny(player, amount)**
 
-local data = Wosa.Character.All()
+Parameters:
+• (*int*) **player:** the player id.    
+• (*number*) **amount:** the amount of money.   
+
+Will add money to any avaliable &quot;payment method&quot; as credit card or cash.    
 </code></pre>
-<h4 id="faction">Faction</h4>
-<p>Server faction natives does not take immediate effect on the user, The user is required to relogg in order to notice the changes.</p>
-<pre><code class="language-Markdown">-- Desc: Add a player to a faction manually. This just straight accesses the database and uses a
-&quot;insert&quot; method to add it manually to the database.
+<pre><code class="language-Markdown">**methods = Wosa.Character.Money.Methods(player, amount)**
 
-Wosa.Character.Faction.Add(ID --[[ int ]], Job --[[ string ]], Rank --[[ string ]], SubRank --[[ string ]])
+Returnal:
+• (*table*) **methods:** In a table form they are listed from index 1 to 3, 1 (RE_VanillaC), 2 (RE_BusinessC), 3 (RE_Cash). 
+
+Parameters:
+• (*int*) **player:** the player id.    
+• (*number*) **amount:** the amount of money.   
+
+Will not return the amount of cash on any of the payment methods, will just see if it actually exists or not.   
 </code></pre>
-<pre><code class="language-Markdown">-- Desc: This function can be used to remove a player from a faction, As this function utilizes
-license + character table means that you can remove players from a faction when they are
-offline as well.
+<pre><code class="language-Markdown">**Wosa.Character.Money.AddToAny(player, amount)**
 
-Wosa.Character.Faction.Remove(License --[[ string ]], CharacterTable --[[ string ]], Job --[[ string ]])
+Parameters:
+• (*int*) **player:** the player id.    
+• (*number*) **amount:** the amount of money.   
 </code></pre>
-<pre><code class="language-Markdown">-- Desc: Used if you want to update a specific row in the database for a faction, You can
-update users rows when they are offline as well.
+<pre><code class="language-Markdown">**Wosa.Character.Money.Set(player, method, amount)**
 
-Wosa.Character.Faction.Update(License --[[ string ]], CharacterTable --[[ string ]], Job --[[ string ]], newRank -- [[ string ]], newSubRank -- [[ string ]])
+Parameters:
+• (*int*) **player:** the player id.    
+• (*string*) **method:** the payment method.    
+• (*number*) **amount:** the amount of money.   
+
+Possible payment methods are RE_VanillaC, RE_BusinessC, RE_Cash.    
 </code></pre>
-<h4 id="inventory">Inventory</h4>
-<pre><code class="language-Markdown">-- Desc: Returns all items in a table, loop or index the table to get values. Gets the inventory
-table for a specific user on the server. Table possible indexes:
-    -- logged_name : string
-    -- license_id : string
-    -- item_name : string
-    -- display_name : string
-    -- item_string1 : string
-    -- item_string2 : string
-    -- item_string3 : string
-    -- item_float1 : float
-    -- item_float2 : float
-    -- item_float3 : float
-    -- item_bool1 : bool
-    -- item_bool2 : bool
-    -- item_bool3 : bool
-    -- item_int1 : int
-    -- item_int2 : int
-    -- item_int3 : int
+<pre><code class="language-Markdown">**Wosa.Character.Money.Add(player, method, amount)**
 
-local items = Wosa.Character.Inventory.Get(ID --[[ int ]])
+Parameters:
+• (*int*) **player:** the player id.    
+• (*string*) **method:** the payment method.    
+• (*number*) **amount:** the amount of money.   
 
--- Example:
-for i, item in ipairs(items) do
-    print('this user has a '..item.display_name..'.')
-end
+Possible payment methods are RE_VanillaC, RE_BusinessC, RE_Cash.    
 </code></pre>
-<pre><code class="language-Markdown">-- Desc: Remove all &quot;removable&quot; items from the players inventory, That said all &quot;custom&quot; items but not items such as ID card, cash item, drivers license etc.
+<h6 id="faction">╚  Faction</h6>
+<pre><code class="language-Markdown">**Wosa.Character.Faction.Remove(user, license)**
 
-Wosa.Character.Inventory.Item.RemoveAllCustom(ID --[[ int ]])
+Parameters:
+• (*int*) **user:** the player id.  
+• (*string*) **license:** license identifier (r* license) of the user.  
+
+Will remove the user from their current faction, the user is required to relogg.    
 </code></pre>
-<pre><code class="language-Markdown">-- Desc: Add a item to a users character.
+<pre><code class="language-Markdown">**Wosa.Character.Faction.Add(faction_rank_extra, faction_rank, user, job_name)**
 
--- // Core Dev Notice: Should prolly remove &quot;InventoryTable&quot; and auto set it for less confusion.
-
-Wosa.Character.Inventory.Item.Add(ID --[[ int ]], InventoryTable --[[ string ]], Data = --[[ table ]])
-
--- Example:
-local Data = {itemName = 'RI_EXAMPLE_ITEM', displayName = 'Example Item', Usable = true, Givable = true, Dropable = true, String1 = '', String2 = '', String3 = '', Bool1 = false, Bool2 = false, Bool3 = false, Int1 = 0, Int2 = 0, Int3 = 0, Float1 = 0.0, Float2 = 0.0, Float3 = 0.0 }
-Wosa.Character.Inventory.Item.Add(1, 'inventory_1', Data)
+Parameters:
+• (*string*) **faction_rank_extra:** is not required, just if you want to store extra faction rank data such as callsign or something.  
+• (*string*) **faction_rank:** the so called faction rank.  
+• (*int*) **user:** the player id.  
+• (*?*) **job_name:** !!deprecated!! not used anymore, leave it as anything you want, wont matter :P    
 </code></pre>
-<pre><code class="language-Markdown">-- Desc: So, This can be used in a few ways. If you leave &quot;ItemID&quot; nil then you will remove
-all items named the &quot;itemName&quot; in the inventory. If you want to remove a specific
-item input the &quot;ItemID&quot;.
+<pre><code class="language-Markdown">**Wosa.Character.Faction.Update(license, faction_rank_extra, faction_rank, user, job_name)**
 
-Wosa.Character.Inventory.Item.Remove(ID --[[ int ]], ItemName --[[ string ]], ItemID --[[ int ]])
+Parameters:
+• (*string*) **license:** license identifier (r* license) of the user.  
+• (*string*) **faction_rank_extra:** is not required, just if you want to store extra faction rank data such as callsign or something.  
+• (*string*) **faction_rank:** the so called faction rank.  
+• (*int*) **user:** the player id.  
+• (*?*) **job_name:** !!deprecated!! not used anymore, leave it as anything you want, wont matter :P    
 </code></pre>
-<pre><code class="language-Markdown">-- Desc: Check if a person has a item, will return true if the person has more then 1 of the item.
+<h6 id="phone">╚  Phone</h6>
+<pre><code class="language-Markdown">**Wosa.Character.Phone.AutomatedMessage(sender_number, receiver_number, user, message)**
 
-local Exist = Wosa.Character.Inventory.Item.Exist(ID --[[ int ]], ItemName --[[ string ]])
+Parameters:
+• (*string*) **sender_number:** the number that will be &quot;from the number&quot;.  
+• (*string*) **receiver_number:** the number that will receive the message. 
+• (*int*) **user:** the player id.  
+• (*string*) **message:** the message the receiver will receive.    
 </code></pre>
-<h4 id="other">Other</h4>
-<pre><code class="language-Markdown">-- Desc: Converts a SqlData to a readable Lua visible date, useful for transforming a timestamp to a &quot;readable&quot; format.
+<h6 id="anticheat">╚  AntiCheat</h6>
+<pre><code class="language-Markdown">**Wosa.Character.AntiCheat.Ban(player, data, type)**
 
-Wosa.Tools.ConvertSQLDateToLuaFormat(SqlDate -- [[ int? ]])
+Parameters:
+• (*int*) **player:** the player id.    
+• (*string*) **data:** data for the &quot;type&quot;, often refeered to the &quot;reason&quot; but in other words.  
+• (*string*) **type:** the anti-cheat &quot;crime type&quot; they commited.   
+
+Permanent ban a user for being caught cheating in some way. Currently only event cheat abuses can be registered, &quot;type&quot; would be &quot;event&quot; and &quot;data&quot; would be event name. DOES NOT ACTUALLY DETECT THE CHEAT FOR YOU, ONLY TAKES CARE OF THE BAN.    
 </code></pre>
-<pre><code class="language-Markdown">-- Desc: Returns the full data set for all languages from &quot;wosa_core&quot;.
+<h6 id="general_3">╚  General</h6>
+<pre><code class="language-Markdown">**data = Wosa.Character.DataFromName(firstname, lastname)**
 
-local Languages = Wosa.Translate.Get()
+Returnal:
+• (*table*) **data:** character data.   
+
+Parameters:
+• (*string*) **firstname:** the character firstname.    
+• (*string*) **lastname:** the character lastname.  
+
+Character &quot;data&quot; is straight from database (character_?), should be looped or indexed correctly as there might be more than one result(s).  
 </code></pre>
-<pre><code class="language-Markdown">-- Desc: Return the current used language.
+<pre><code class="language-Markdown">**data = Wosa.Character.All()**
 
-local Language = Wosa.Translate.Language()
+Returnal:
+• (*table*) **data:** character data.   
+</code></pre>
+<pre><code class="language-Markdown">**Wosa.Character.AddLicensePoints(user, points)**
+
+Parameters:
+• (*int*) **user:** the player id.  
+• (*int*) **points:** Add license points to the drivers license.    
+
+This function does not seem to be real time synced, meaning the player would have to relogg to see the actions on their end for now.    
+</code></pre>
+<pre><code class="language-Markdown">**data = Wosa.Character.Data(user)**
+
+Returnal:
+• (*table*) **data:** character data.   
+
+Parameters:
+• (*int*) **user:** the player id.  
 </code></pre></div>
                 <footer>
     <div class="footer-buttons">

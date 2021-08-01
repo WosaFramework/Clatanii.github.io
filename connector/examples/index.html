@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Wosa.Core.Development">
     <link rel="shortcut icon" href="../../img/favicon.ico">
-    <title>Setup &mdash; Wosa Docs</title>
+    <title>Script Examples &mdash; Wosa Docs</title>
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css">
     <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.1/css/all.css">
@@ -51,14 +51,14 @@
 <ul class="subnav">
     <li class="toctree-l2 current"><button class="section nav-item">Connector</button>
 <ul class="subnav">
-    <li class="toctree-l3 current"><a class="nav-item current" href="./">Setup</a>
-<ul class="subnav">
-<li class="toctree-l4"><a class="nav-item toc" href="#setup">Setup</a></li>
-<li class="toctree-l4"><a class="nav-item toc" href="#usage">Usage</a></li>
-</ul></li>
+    <li class="toctree-l3"><a class="nav-item" href="../setup/">Setup</a></li>
     <li class="toctree-l3"><a class="nav-item" href="../natives_server/">Server Natives</a></li>
     <li class="toctree-l3"><a class="nav-item" href="../natives_client/">Client Natives</a></li>
-    <li class="toctree-l3"><a class="nav-item" href="../examples/">Script Examples</a></li>
+    <li class="toctree-l3 current"><a class="nav-item current" href="./">Script Examples</a>
+<ul class="subnav">
+<li class="toctree-l4"><a class="nav-item toc" href="#basic-print">Basic Print</a></li>
+<li class="toctree-l4"><a class="nav-item toc" href="#basic-menu">Basic Menu</a></li>
+</ul></li>
 </ul></li>
     <li class="toctree-l2"><button class="section nav-item hide">Events</button>
 <ul class="subnav hide">
@@ -84,8 +84,8 @@
     <div class="link">
         <a href="https://github.com/WosaFramework/Docs/" class="fa fa-github"> GitHub</a>
     </div>
-    <div class="previous"><a href="../../install/troubleshooting/">&laquo; Previous</a></div>
-    <div class="next"><a href="../natives_server/">Next &raquo;</a></div>
+    <div class="previous"><a href="../natives_client/">&laquo; Previous</a></div>
+    <div class="next"><a href="../../events/events_server/">Next &raquo;</a></div>
 </div>
         </aside>
         <div id="spacer"><button class="arrow"></button></div>
@@ -100,21 +100,84 @@
     <li>Scripting &raquo; </li><li>Connector</li>
 </ul>
 </nav>
-                <div id="content"><h1 id="api-connector">API Connector</h1>
-<p>The connector are used to access data from other resources than the <em>wosa_core</em>. An example of were the connector is used are the <em>wosa_jobs</em> which is the resource for all of the jobs.</p>
-<h2 id="setup">Setup</h2>
-<p>A few files is required to be put in your resource to use the connector. We use two different connector files, One for the server and one for your client. It is super easy to set up, Let us go through the steps!</p>
-<ol>
-<li><strong>Download the latest connector files from <a href="https://github.com/WosaFramework/Wosa-Connector/releases">here</a>.</strong></li>
-<li><strong>Drag &amp; drop the files provided with the download to your resource.</strong></li>
-<li><strong>Add the files to your __resource</strong><em>(outdated dont use this)</em><strong> or fxmanifest file.</strong></li>
-</ol>
-<h2 id="usage">Usage</h2>
-<p>Find <a href="../natives_client/">client</a> and <a href="../natives_server/">server</a> functions documented at the next page. Keep in mind that FiveM natives and Wosa natives are not the same thing.</p></div>
+                <div id="content"><h1 id="connector-examples">Connector Examples</h1>
+<p>So, now that you got the connector setup in your own resource it is time to make your first wosa script! Here we have a few examples of how to create script in various forms.</p>
+<h3 id="basic-print">Basic Print</h3>
+<p>Let's see so everything is working as expected by doing a simple "what_is_my_name" print in console.</p>
+<p><code>client.lua</code></p>
+<pre><code class="language-markdown">RegisterCommand('what_is_my_name', function()
+    print('Your name is '..Wosa.Character.Firstname()..' '..Wosa.Character.Lastname()..'.')
+end)
+</code></pre>
+<p><strong>Ok, press F8 and see if it did work!</strong></p>
+<p><img alt="" src="../test_command.png" style="height:40%;width:40%" /></p>
+<h3 id="basic-menu">Basic Menu</h3>
+<p>Add this to <code>fxmanifest.lua</code> file. By adding this to your manifest file you import the menu library required to create RageUI menus.</p>
+<pre><code class="language-Markdown">client_scripts {
+    '@wosa_core/scripting/scripting_ex/RageUI/RMenu.lua',
+    '@wosa_core/scripting/scripting_ex/RageUI/RageUI.lua',
+    '@wosa_core/scripting/scripting_ex/RageUI/Menu.lua',
+    '@wosa_core/scripting/scripting_ex/RageUI/MenuController.lua',
+
+    '@wosa_core/scripting/scripting_ex/RageUI/components/Audio.lua',
+    '@wosa_core/scripting/scripting_ex/RageUI/components/Rectangle.lua',
+    '@wosa_core/scripting/scripting_ex/RageUI/components/Screen.lua',
+    '@wosa_core/scripting/scripting_ex/RageUI/components/Sprite.lua',
+    '@wosa_core/scripting/scripting_ex/RageUI/components/Text.lua',
+    '@wosa_core/scripting/scripting_ex/RageUI/components/Visual.lua',
+
+    '@wosa_core/scripting/scripting_ex/RageUI/elements/ItemsBadge.lua',
+    '@wosa_core/scripting/scripting_ex/RageUI/elements/ItemsColour.lua',
+    '@wosa_core/scripting/scripting_ex/RageUI/elements/PanelColour.lua',
+
+    '@wosa_core/scripting/scripting_ex/RageUI/items/UIButton.lua',
+    '@wosa_core/scripting/scripting_ex/RageUI/items/UICheckBox.lua',
+    '@wosa_core/scripting/scripting_ex/RageUI/items/UISeparator.lua',
+    '@wosa_core/scripting/scripting_ex/RageUI/items/UIList.lua',
+    '@wosa_core/scripting/scripting_ex/RageUI/items/UIProgress.lua',
+    '@wosa_core/scripting/scripting_ex/RageUI/items/UISlider.lua',
+    '@wosa_core/scripting/scripting_ex/RageUI/items/UISliderHeritage.lua',
+    '@wosa_core/scripting/scripting_ex/RageUI/items/UISliderProgress.lua',
+
+    '@wosa_core/scripting/scripting_ex/RageUI/panels/UIBoutonPanel.lua',
+    '@wosa_core/scripting/scripting_ex/RageUI/panels/UIColourPanel.lua',
+    '@wosa_core/scripting/scripting_ex/RageUI/panels/UIGridPanel.lua',
+    '@wosa_core/scripting/scripting_ex/RageUI/panels/UIGridPanelHorizontal.lua',
+    '@wosa_core/scripting/scripting_ex/RageUI/panels/UIGridPanelVertical.lua',
+    '@wosa_core/scripting/scripting_ex/RageUI/panels/UIPercentagePanel.lua',
+    '@wosa_core/scripting/scripting_ex/RageUI/panels/UIStatisticsPanel.lua',
+
+    '@wosa_core/scripting/scripting_ex/RageUI/windows/UIHeritage.lua',
+}
+</code></pre>
+<p><code>client.lua</code>, This will be the client file in your own resource which will "handle" the menu.</p>
+<pre><code class="language-Markdown">
+-- At top of file, we register the menu.
+RMenu.Add('example', 'menu', RageUI.CreateMenu('', '', 1320, 0))
+RMenu:Get('example', 'menu'):SetSubtitle('~b~EXAMPLE MENU')
+
+-- Render handle, put inside a loop. &quot;Wosa.Loop&quot; is equal to a &quot;while true do&quot; loop.
+Wosa.Loop(true, function()
+
+    -- handle for menu, needs to be in a loop, handled in &quot;real time&quot;.
+    RageUI.IsVisible(RMenu:Get('example', 'menu'), false, false, true, function()
+        RageUI.ButtonWithStyle('a button wow!', 'this is desc for the button, can be nil to be empty/nothing.', {  }, true, function(Hovered, Active, Selected)
+
+        end)
+    end)
+end)
+
+-- &quot;/open_test_menu&quot; to open the menu.
+RegisterCommand('open_test_menu', function()
+    RageUI.Visible(RMenu:Get('example', 'menu'), true)
+end)
+</code></pre>
+<p><strong>Let's see how it looks! 🐌</strong></p>
+<p><img alt="" src="../example_menu.jpg" style="height:20%;width:40%" /></p></div>
                 <footer>
     <div class="footer-buttons">
-        <div class="previous"><a href="../../install/troubleshooting/" title="Troubleshooting"><span>Previous</span></a></div>
-        <div class="next"><a href="../natives_server/" title="Server Natives"><span>Next</span></a></div>
+        <div class="previous"><a href="../natives_client/" title="Client Natives"><span>Previous</span></a></div>
+        <div class="next"><a href="../../events/events_server/" title="Server Events"><span>Next</span></a></div>
     </div>
     <div class="footer-note">
         <p>
