@@ -4,6 +4,13 @@ Welcome to the official documentation page, on this website you can find useful 
 ![](assets/test.gif){: style="height:10%;width:10%"}
 
 ## What's on your mind?
+
+**For Players**
+
+* Just a regular player playing on a server with this framework? Check out our **[starter guide](guides/player.md)**!
+
+**For Server Owners**
+
 * Are you looking for how to **[install](install/install.md)** the framework?
 * Oh, Maybe you are looking for how to use the **[UpdateFFX](updateffx.md)** tool to update your server easier!
 * Perhaps, Are looking for how to create your own resource with the framework & how to use the **[connector](connector/setup.md)**.

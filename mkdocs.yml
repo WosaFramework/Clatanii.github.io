@@ -23,6 +23,9 @@ nav:
 
     - 'UpdateFFX' : 'updateffx.md'
 
+    - 'Guides' :
+      - 'Starter Player Guide' : 'guides/player.md'
+
     - 'Installation' :
       - 'How to install' : 'install/install.md'
       - 'Troubleshooting' : 'install/troubleshooting.md'
