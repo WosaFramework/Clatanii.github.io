@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Wosa.Core.Development">
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+    <title>Introduction &mdash; Wosa Docs</title>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.1/css/v4-shims.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script> 
+</head>
+
+<body ontouchstart="">
+    <div id="container">
+        <aside>
+            <div class="home">
+                <div class="title">
+                    <button class="hamburger"></button>
+                    <a href="../.." class="site-name"> Wosa Docs</a>
+                </div>
+                <div class="search">
+                    <div role="search">
+    <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+        <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+    </form>
+</div>
+                </div>
+            </div>
+            <nav class="nav">
+                <ul class="root">
+                    <li class="toctree-l1"><a class="nav-item" href="../..">Home</a></li>
+                    <li class="toctree-l1"><a class="nav-item" href="../../faq/">F.A.Q</a></li>
+                    <li class="toctree-l1"><a class="nav-item" href="../../updateffx/">UpdateFFX</a></li>
+                    <li class="toctree-l1"><button class="section nav-item">Guides</button>
+<ul class="subnav">
+    <li class="toctree-l2"><a class="nav-item" href="../../guides/player/">Starter Player Guide</a></li>
+</ul></li>
+                    <li class="toctree-l1"><button class="section nav-item">Installation</button>
+<ul class="subnav">
+    <li class="toctree-l2"><a class="nav-item" href="../../install/install/">How to install</a></li>
+    <li class="toctree-l2"><a class="nav-item" href="../../install/troubleshooting/">Troubleshooting</a></li>
+</ul></li>
+                    <li class="toctree-l1"><button class="section nav-item">Scripting</button>
+<ul class="subnav">
+    <li class="toctree-l2"><button class="section nav-item hide">Connector</button>
+<ul class="subnav hide">
+    <li class="toctree-l3"><a class="nav-item" href="../../connector/setup/">Setup</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../connector/natives_server/">Server Natives</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../connector/natives_client/">Client Natives</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../connector/examples/">Script Examples</a></li>
+</ul></li>
+    <li class="toctree-l2"><button class="section nav-item hide">Events</button>
+<ul class="subnav hide">
+    <li class="toctree-l3"><a class="nav-item" href="../../events/events_server/">Server Events</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../events/events_client/">Client Events</a></li>
+</ul></li>
+    <li class="toctree-l2 current"><button class="section nav-item">Core</button>
+<ul class="subnav">
+    <li class="toctree-l3 current"><a class="nav-item current" href="./">Introduction</a>
+<ul class="subnav">
+<li class="toctree-l4"><a class="nav-item toc" href="#enabling-development-features">Enabling Development Features</a></li>
+</ul></li>
+    <li class="toctree-l3"><a class="nav-item" href="../api/">API Functions</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../system_log/">System Log</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../external/">External Scripts</a></li>
+    <li class="toctree-l3"><button class="section nav-item hide">Core Natives</button>
+<ul class="subnav hide">
+    <li class="toctree-l4"><a class="nav-item" href="../server_natives/">Server Natives</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../client_natives/">Client Natives</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+                </ul>
+            </nav>
+            <div class="repo">
+    <div class="link">
+        <a href="https://github.com/WosaFramework/Docs/" class="fa fa-github"> GitHub</a>
+    </div>
+    <div class="previous"><a href="../../events/events_client/">&laquo; Previous</a></div>
+    <div class="next"><a href="../api/">Next &raquo;</a></div>
+</div>
+        </aside>
+        <div id="spacer"><button class="arrow"></button></div>
+        <main>
+            <div class="home-top">
+                <button class="hamburger"></button>
+                <a href="../.." class="site-name"> Wosa Docs</a>
+            </div>
+            <div id="main">
+                <nav class="breadcrumbs">
+<ul>
+    <li>Scripting &raquo; </li><li>Core</li>
+</ul>
+</nav>
+                <div id="content"><h1 id="core-introduction">Core Introduction</h1>
+<p>The core, powering the whole framework and all its components are one of the most vital, important and complex part of the framework. Therefore we do not recommend or suggest that newbies of scripting to make changes in the core. This documentation was written for experienced developers working on the project officially or non officialy to make it better.</p>
+<h2 id="enabling-development-features">Enabling Development Features</h2>
+<p>We recommend you to disable the API ghostmode which will give you more in-depht logging.</p>
+<pre><code># Disables API ghostmode which is enabled by default, gets all api logs and events
+set wosa.disable_api_ghostmode 1
+</code></pre>
+<p>We also recommend you to enable the global <code>framework.dev_mode</code> via <a href="https://github.com/WosaFramework/Framework/blob/master/wosa_core/scripting/_framework.lua">this</a> file. With the development mode enabled you will be in a more cousy development environment.</p></div>
+                <footer>
+    <div class="footer-buttons">
+        <div class="previous"><a href="../../events/events_client/" title="Client Events"><span>Previous</span></a></div>
+        <div class="next"><a href="../api/" title="API Functions"><span>Next</span></a></div>
+    </div>
+    <div class="footer-note">
+        <p>
+            Built with <a href="http://www.mkdocs.org">MkDocs</a> using
+            <a href="https://github.com/daizutabi/mkdocs-ivory">Ivory theme</a>.
+        </p>
+    </div>
+</footer>
+            </div>
+        </main>
+    </div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js"></script>
+    <script src="../../search/main.js"></script>
+</body>
+
+</html>

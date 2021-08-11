@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Wosa.Core.Development">
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+    <title>Client Natives &mdash; Wosa Docs</title>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.1/css/v4-shims.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script> 
+</head>
+
+<body ontouchstart="">
+    <div id="container">
+        <aside>
+            <div class="home">
+                <div class="title">
+                    <button class="hamburger"></button>
+                    <a href="../.." class="site-name"> Wosa Docs</a>
+                </div>
+                <div class="search">
+                    <div role="search">
+    <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+        <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+    </form>
+</div>
+                </div>
+            </div>
+            <nav class="nav">
+                <ul class="root">
+                    <li class="toctree-l1"><a class="nav-item" href="../..">Home</a></li>
+                    <li class="toctree-l1"><a class="nav-item" href="../../faq/">F.A.Q</a></li>
+                    <li class="toctree-l1"><a class="nav-item" href="../../updateffx/">UpdateFFX</a></li>
+                    <li class="toctree-l1"><button class="section nav-item">Guides</button>
+<ul class="subnav">
+    <li class="toctree-l2"><a class="nav-item" href="../../guides/player/">Starter Player Guide</a></li>
+</ul></li>
+                    <li class="toctree-l1"><button class="section nav-item">Installation</button>
+<ul class="subnav">
+    <li class="toctree-l2"><a class="nav-item" href="../../install/install/">How to install</a></li>
+    <li class="toctree-l2"><a class="nav-item" href="../../install/troubleshooting/">Troubleshooting</a></li>
+</ul></li>
+                    <li class="toctree-l1"><button class="section nav-item">Scripting</button>
+<ul class="subnav">
+    <li class="toctree-l2"><button class="section nav-item hide">Connector</button>
+<ul class="subnav hide">
+    <li class="toctree-l3"><a class="nav-item" href="../../connector/setup/">Setup</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../connector/natives_server/">Server Natives</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../connector/natives_client/">Client Natives</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../connector/examples/">Script Examples</a></li>
+</ul></li>
+    <li class="toctree-l2"><button class="section nav-item hide">Events</button>
+<ul class="subnav hide">
+    <li class="toctree-l3"><a class="nav-item" href="../../events/events_server/">Server Events</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../events/events_client/">Client Events</a></li>
+</ul></li>
+    <li class="toctree-l2 current"><button class="section nav-item">Core</button>
+<ul class="subnav">
+    <li class="toctree-l3"><a class="nav-item" href="../introduction/">Introduction</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../api/">API Functions</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../system_log/">System Log</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../external/">External Scripts</a></li>
+    <li class="toctree-l3 current"><button class="section nav-item">Core Natives</button>
+<ul class="subnav">
+    <li class="toctree-l4"><a class="nav-item" href="../server_natives/">Server Natives</a></li>
+    <li class="toctree-l4 current"><a class="nav-item current" href="./">Client Natives</a>
+<ul class="subnav">
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+                </ul>
+            </nav>
+            <div class="repo">
+    <div class="link">
+        <a href="https://github.com/WosaFramework/Docs/" class="fa fa-github"> GitHub</a>
+    </div>
+    <div class="previous"><a href="../server_natives/">&laquo; Previous</a></div>
+</div>
+        </aside>
+        <div id="spacer"><button class="arrow"></button></div>
+        <main>
+            <div class="home-top">
+                <button class="hamburger"></button>
+                <a href="../.." class="site-name"> Wosa Docs</a>
+            </div>
+            <div id="main">
+                <nav class="breadcrumbs">
+<ul>
+    <li>Scripting &raquo; </li><li>Core &raquo; </li><li>Core Natives</li>
+</ul>
+</nav>
+                <div id="content"><h1 id="client-functions">Client Functions</h1>
+<p>Core client natives used within the resource wosa_core.</p>
+<pre><code class="language-Markdown">-- FREEZE ALL MOVEMENTS + PED //Toggle not each tick
+
+API.NATIVE.FREEZE_ALL_MOVEMENT(bool)
+</code></pre>
+<pre><code class="language-Markdown">-- CALL CAMERA VIEW (DEFAULT SCRIPTED CAMERA) ONLY
+
+API.NATIVE.CREATE_CAMERA(x, y, z, rx, ry, rz, extra_data)
+</code></pre>
+<pre><code class="language-Markdown">-- CALL CAMERA VIEW WITH ANIMATION (2 CAMERAS) ONLY
+
+API.NATIVE.CREATE_ANIMATED_CAMERA(x, y, z, rx, ry, rz, x2, y2, z2, rx2, ry2, rz2, duration, extra_data)
+</code></pre>
+<pre><code class="language-Markdown">-- DESTROY ALL &quot;FRAMEWORK&quot; CAMERAS
+
+API.NATIVE.DESTROY_ALL_SCRIPT_CAMERAS()
+</code></pre>
+<pre><code class="language-Markdown">-- DESTROY SPECIFIC CAMERA, KINDA RETARDED CAUSE IT WOULD LITTERLY STOP RENDERING ANY CAMERA
+
+API.NATIVE.DESTROY_CAMERA(cam)
+</code></pre>
+<pre><code class="language-Markdown">-- BLOCK/HIDE HUD THIS FRAME
+
+API.NATIVE.HIDE_HUD_THIS_TICK()
+</code></pre>
+<pre><code class="language-Markdown">local bool = API.NATIVE.IS_HUD_HIDDEN()
+</code></pre>
+<pre><code class="language-Markdown">-- LOADING WHEEL BOTTOM RIGHT
+
+API.NATIVE.LOADING_WHEEL(showText, showTime, showType)
+</code></pre>
+<pre><code class="language-Markdown">-- HELP TEXT NATIVE RIGHT UP CORNER (NEEDS TO BE CALLED ONCE)
+
+API.NATIVE.HELP_TEXT_DUR(lineOne, lineTwo, lineThree, duration)
+</code></pre>
+<pre><code class="language-Markdown">-- DRAW MISSION TEXT FUNCTION
+
+API.NATIVE.MISSION_TEXT_2(m_text, showtime)
+</code></pre>
+<pre><code class="language-Markdown">-- HELP TEXT NATIVE RIGHT UP CORNER (NEEDS TO BE CALLED EACH TICK)
+
+API.NATIVE.HELP_TEXT_TICK(str)
+</code></pre>
+<pre><code class="language-Markdown">-- HELP TEXT NATIVE RIGHT UP CORNER LONG (NEEDS TO BE CALLED EACH TICK)
+
+API.NATIVE.HELP_TEXT_LONG_TICK(str1, str2, str3)
+</code></pre>
+<pre><code class="language-Markdown">-- SHOW NOTIFICATION
+
+API.NATIVE.NOTIFICATION(text)
+</code></pre>
+<pre><code class="language-Markdown">local bool = API.NATIVE.DOES_VEHICLE_HAVE_EXTRAS(veh)
+</code></pre>
+<pre><code class="language-Markdown">-- FROM VEHICLE GET DATA TO A TABLE
+
+local data = API.NATIVE.VEHICLE_TO_DATA(veh)
+</code></pre>
+<pre><code class="language-Markdown">-- SET OUTFIT FOR MP PED (USED FOR EUP MOSTLY BUT NOT LIMITED TO)
+
+API.NATIVE.SET_EUP_OUTFIT(outfit)
+</code></pre>
+<pre><code class="language-Markdown">-- CREATE A VEHICLE FROM DATA (NATIVE.VEHICLE_TO_DATA) FUNCTION
+
+API.NATIVE.CREATE_VEHICLE_FROM_DATA(data, x,y,z,h, dontnetwork, specialData)
+</code></pre>
+<pre><code class="language-Markdown">-- CREATE VEHICLE
+
+API.NATIVE.CREATE_VEHICLE(vehicleName, coords, data, Network, setHeading)
+</code></pre>
+<pre><code class="language-Markdown">API.NATIVE.REQUEST_MODEL(inp)
+</code></pre>
+<pre><code class="language-Markdown">local bool = API.NATIVE.IS_MODEL_LOADED(inp)
+</code></pre>
+<pre><code class="language-Markdown">-- KEY BOARD INPUT BOX
+
+local inp = API.NATIVE.KEYBOARD_INPUT(TextEntry, ExampleText, MaxStringLenght)
+</code></pre>
+<pre><code class="language-Markdown">-- REQUEST A PLAYER NPC/MP MODEL 
+
+API.NATIVE.SET_PLAYER_PED(data)
+</code></pre>
+<pre><code class="language-Markdown">-- REQUEST MP CHARACTER CLOTHING CHANGE
+
+API.NATIVE.SET_PED_CLOTHING(arms, arms_tex, undershirt, undershirt_tex, top, top_tex, pants, pants_tex, shoes, shoes_tex, neck, neck_tex)
+</code></pre>
+<pre><code class="language-Markdown">-- GET DATA FOR FUNCTION ^^ (JUST A TIME SAVER REALLY)
+
+local arms_d, arms_t, undershirt_d, undershirt_t, jacket_d, jacket_t, pants_d, pants_t, shoes_d, shoes_t, neck_d, neck_t = API.NATIVE.GET_PED_CLOTHING()
+</code></pre>
+<pre><code class="language-Markdown">-- DRAW 3D TEXT ON SCREEN
+
+API.NATIVE.DRAW_SCREEN_TEXT(x, y, width, height, scale, text, r, g, b, a, font, centre)
+</code></pre>
+<pre><code class="language-Markdown">-- DRAW 3D TEXT INGAME
+
+API.NATIVE.DRAW_GAME_TEXT(x,y,z, text)
+</code></pre>
+<pre><code class="language-Markdown">-- DRAW 3D TEXT INGAME
+
+API.NATIVE.DRAW_GAME_TEXT_NO_BOX(x,y,z, text, _scale)
+</code></pre>
+<pre><code class="language-Markdown">-- DRAW 3D TEXT INGAME
+
+API.NATIVE.DRAW_GAME_TEXT_REPEAT(x,y,z, text, ms)
+</code></pre>
+<pre><code class="language-Markdown">-- LOAD WALK STYLE
+
+API.NATIVE.REQUEST_ANIMATION_SET(dict)
+</code></pre>
+<pre><code class="language-Markdown">local players = API.NATIVE.GET_PLAYERS_IN_AREA_EXTRA(coords, area)
+</code></pre>
+<pre><code class="language-Markdown">local players = API.NATIVE.GET_PLAYERS_IN_AREA()
+</code></pre>
+<pre><code class="language-Markdown">API.NATIVE.REQUEST_ANIMATION_DICT(dict)
+</code></pre>
+<pre><code class="language-Markdown">local vehicle_cache = API.NATIVE.GET_LOADED_VEHICLES()
+</code></pre>
+<pre><code class="language-Markdown">local vehicle = API.NATIVE.GET_CLOSEST_VEHICLE()
+</code></pre>
+<pre><code class="language-Markdown">local player = API.NATIVE.GET_CLOSE_PLAYER()
+</code></pre>
+<pre><code class="language-Markdown">local players = API.NATIVE.GET_PLAYERS()
+</code></pre>
+<pre><code class="language-Markdown">-- PRINT DEBUG COMMAND IN CONSOLE IF DEV MODE IS ACTIVE
+-- print_type (int): 1 = Success, 2 = Warning, 3 = Error
+
+-- (WILL ONLY WORK IF &quot;framework.dev_mode&quot;/Development mode envi is enabled)
+
+API.NATIVE.DEBUG_PRINT(print_type, print_msg)
+</code></pre>
+<pre><code class="language-Markdown">local formatted = API.NATIVE.RETURN_COMMA_VALUE(amount)
+</code></pre>
+<pre><code class="language-Markdown">local new = API.NATIVE.PAIRS_BY_KEYS(t, f)
+</code></pre></div>
+                <footer>
+    <div class="footer-buttons">
+        <div class="previous"><a href="../server_natives/" title="Server Natives"><span>Previous</span></a></div>
+    </div>
+    <div class="footer-note">
+        <p>
+            Built with <a href="http://www.mkdocs.org">MkDocs</a> using
+            <a href="https://github.com/daizutabi/mkdocs-ivory">Ivory theme</a>.
+        </p>
+    </div>
+</footer>
+            </div>
+        </main>
+    </div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js"></script>
+    <script src="../../search/main.js"></script>
+</body>
+
+</html>

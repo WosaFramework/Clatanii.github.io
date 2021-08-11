@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Wosa.Core.Development">
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+    <title>Starter Player Guide &mdash; Wosa Docs</title>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.1/css/v4-shims.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script> 
+</head>
+
+<body ontouchstart="">
+    <div id="container">
+        <aside>
+            <div class="home">
+                <div class="title">
+                    <button class="hamburger"></button>
+                    <a href="../.." class="site-name"> Wosa Docs</a>
+                </div>
+                <div class="search">
+                    <div role="search">
+    <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+        <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+    </form>
+</div>
+                </div>
+            </div>
+            <nav class="nav">
+                <ul class="root">
+                    <li class="toctree-l1"><a class="nav-item" href="../..">Home</a></li>
+                    <li class="toctree-l1"><a class="nav-item" href="../../faq/">F.A.Q</a></li>
+                    <li class="toctree-l1"><a class="nav-item" href="../../updateffx/">UpdateFFX</a></li>
+                    <li class="toctree-l1"><button class="section nav-item">Guides</button>
+<ul class="subnav">
+    <li class="toctree-l2 current"><a class="nav-item current" href="./">Starter Player Guide</a>
+<ul class="subnav">
+<li class="toctree-l3"><a class="nav-item toc" href="#spawning-in">Spawning in</a></li>
+<li class="toctree-l3"><a class="nav-item toc" href="#starter-jobs">Starter jobs</a></li>
+<li class="toctree-l3"><a class="nav-item toc" href="#levels">Levels</a></li>
+<li class="toctree-l3"><a class="nav-item toc" href="#money">Money</a></li>
+<li class="toctree-l3"><a class="nav-item toc" href="#licenses">Licenses</a></li>
+</ul></li>
+</ul></li>
+                    <li class="toctree-l1"><button class="section nav-item">Installation</button>
+<ul class="subnav">
+    <li class="toctree-l2"><a class="nav-item" href="../../install/install/">How to install</a></li>
+    <li class="toctree-l2"><a class="nav-item" href="../../install/troubleshooting/">Troubleshooting</a></li>
+</ul></li>
+                    <li class="toctree-l1"><button class="section nav-item">Scripting</button>
+<ul class="subnav">
+    <li class="toctree-l2"><button class="section nav-item hide">Connector</button>
+<ul class="subnav hide">
+    <li class="toctree-l3"><a class="nav-item" href="../../connector/setup/">Setup</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../connector/natives_server/">Server Natives</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../connector/natives_client/">Client Natives</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../connector/examples/">Script Examples</a></li>
+</ul></li>
+    <li class="toctree-l2"><button class="section nav-item hide">Events</button>
+<ul class="subnav hide">
+    <li class="toctree-l3"><a class="nav-item" href="../../events/events_server/">Server Events</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../events/events_client/">Client Events</a></li>
+</ul></li>
+    <li class="toctree-l2"><button class="section nav-item hide">Core</button>
+<ul class="subnav hide">
+    <li class="toctree-l3"><a class="nav-item" href="../../core/introduction/">Introduction</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../core/api/">API Functions</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../core/system_log/">System Log</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../core/external/">External Scripts</a></li>
+    <li class="toctree-l3"><button class="section nav-item hide">Core Natives</button>
+<ul class="subnav hide">
+    <li class="toctree-l4"><a class="nav-item" href="../../core/server_natives/">Server Natives</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../../core/client_natives/">Client Natives</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+                </ul>
+            </nav>
+            <div class="repo">
+    <div class="link">
+        <a href="https://github.com/WosaFramework/Docs/" class="fa fa-github"> GitHub</a>
+    </div>
+    <div class="previous"><a href="../../updateffx/">&laquo; Previous</a></div>
+    <div class="next"><a href="../../install/install/">Next &raquo;</a></div>
+</div>
+        </aside>
+        <div id="spacer"><button class="arrow"></button></div>
+        <main>
+            <div class="home-top">
+                <button class="hamburger"></button>
+                <a href="../.." class="site-name"> Wosa Docs</a>
+            </div>
+            <div id="main">
+                <nav class="breadcrumbs">
+<ul>
+    <li>Guides</li>
+</ul>
+</nav>
+                <div id="content"><h1 id="player-guide">Player Guide</h1>
+<p>So you just spawned in to a server with this framework installed and now feel pretty lost? Don't worry we will cover you with the basic and <em>most</em> important things.</p>
+<h3 id="spawning-in">Spawning in</h3>
+<p><img alt="" src="../airport.jpg" style="height:0%;width:20%" /> <img alt="" src="../main_menu.png" style="height:0%;width:14%" /></p>
+<p>Alright, So you have finished your character and is now standing at the airport wondering what to do. We recommend you to do the following...</p>
+<ul>
+<li>Check out your main menu, Press M <em>(defult)</em> to open it as you will spend ALOT of your time in here.</li>
+<li>Rent a <strong>taxi</strong> or a <strong>bicycle</strong> at the airport to get yourself into the town of Los Santos.</li>
+<li>When in the city, head to a store and purchase something to eat and drink as without health you won't get far.</li>
+<li>Now it is time to get into business, as from the beginning with no levels not all interactions are unlocked. We have a made a list for good starter jobs below were you can get some starter cash and levels from which requires no or little levels to play.</li>
+</ul>
+<h3 id="starter-jobs">Starter jobs</h3>
+<p><img alt="" src="../hamburger.jpg" style="height:0%;width:40%" /></p>
+<p>Looking for great jobs <strong>without</strong> any or <strong>very little</strong> level <em>required</em>? Take a look at our list we made for you!</p>
+<ul>
+<li><strong>BurgerShot job</strong>, serve real players hamburgers and make them yourself! <strong>[0 points required]</strong></li>
+<li><strong>Public Works</strong>, do work for the state around the map. <strong>[0 points required]</strong></li>
+<li><strong>Construction Works</strong>, work on construction sites around Los Santos and earn money! <strong>[0 points required]</strong></li>
+<li><strong>Garbage Trucker</strong>, for this job, you are required to own a truck license and a vehicles driver license, <strong>[20 points required]</strong></li>
+</ul>
+<h3 id="levels">Levels</h3>
+<p><img alt="" src="../levels.png" style="height:0%;width:40%" /></p>
+<p>Levels, points or "XP" as it is called is a system to make the experience more challenging and competitive. You can gain levels by completing daily tasks and by doing tasks such as jobs and winning races. You also gain <em>x</em> amount of points each half hour playing on the server. You can also <em>loose</em> points by dying or getting jailed for example.</p>
+<p><strong>So what can you do with levels?</strong> When you are starting out on the server you are pretty limited to what you can do. You can not purchase own vehicles from "official" stores which means you are forced to rent a vehicle or buy a custom vehicle from the auto-dealership or the business vehicle dealerships if you <em>DO</em> want a vehicle. Same goes for owning houses, the first "househould" you will be avaliable to own is a rented apartment where you can be safe. A lot of the jobs are locked to a lower or a higher level depending on the possible earnings you can receive from the job. Same goes for <em>legal firearms</em> that can be purchased of the Ammunation store. You can only purchase a firearm license after you reached x amount of points, Of course there is other ways to get a weapon, illegal firearms <em>cough</em>. By playing more on the server you earn more levels which will give you access to more interactions and give your character more status in the server community.</p>
+<p>📌 <strong><em>FOR SERVER OWNERS:</em></strong> <em>This system can be disabled <a href="https://github.com/WosaFramework/Framework/blob/master/wosa_core/scripting/scripting_configs/Beta_config.lua#L7">here</a> as it still marked as a BETA feature.</em></p>
+<h3 id="money">Money</h3>
+<p><img alt="" src="../atm.jpg" style="height:0%;width:10%" /> <img alt="" src="../atm_pic.png" style="height:0%;width:25%" /></p>
+<p>Money, the thing we all need. From the beginning you might not have as much money as some other people around. That is okay, Just be sure that you are handling your money in the correct way. Most important is as soon as possible buying a bank card from a bank anywhere in San Andreas in case you die or get robbed. Keeping all of your money in your pockets is a <strong>BIG</strong> no no. Keep a few dollars on your pocket cash for normal day to day business to be safe. To transfer, deposit or withdrawal from your bank card you can visit a bank or a ATM which is located around the map. To <strong>view</strong> the amount of <strong>pocket cash</strong> you have open your <em>menu -&gt; inventory -&gt; cash -&gt; use item</em>.</p>
+<h3 id="licenses">Licenses</h3>
+<p><img alt="" src="../driving_school_car.jpg" style="height:0%;width:25%" /> <img alt="" src="../driving_school_intro.jpg" style="height:0%;width:25%" /></p>
+<p>Oh, Licenses? Yes! You will need a license for certain things which are...</p>
+<ul>
+<li>Legal firearm</li>
+<li>Driver's license</li>
+<li>Trucking license</li>
+<li>Pilot license</li>
+</ul>
+<p>After completing and purchasing the license you can showcase it to an officer in your inventory menu by hitting <em>use item</em> on your license item. Your license can be revoked by a police officer or in worst case by a speed camera due to excessive speeding. Soo... Don't speed like a crazy guy on drugs if you want to keep your license!</p></div>
+                <footer>
+    <div class="footer-buttons">
+        <div class="previous"><a href="../../updateffx/" title="UpdateFFX"><span>Previous</span></a></div>
+        <div class="next"><a href="../../install/install/" title="How to install"><span>Next</span></a></div>
+    </div>
+    <div class="footer-note">
+        <p>
+            Built with <a href="http://www.mkdocs.org">MkDocs</a> using
+            <a href="https://github.com/daizutabi/mkdocs-ivory">Ivory theme</a>.
+        </p>
+    </div>
+</footer>
+            </div>
+        </main>
+    </div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js"></script>
+    <script src="../../search/main.js"></script>
+</body>
+
+</html>
