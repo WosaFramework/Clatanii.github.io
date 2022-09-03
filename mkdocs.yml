@@ -2,7 +2,7 @@ site_name: Wosa Docs
 site_description: Official Wosa Documentation
 site_author: Wosa.Core.Development
 
-copyright: Copyright; 2019-2021 Wosa Framework
+copyright: Copyright; 2019-2022 Wosa Framework
 
 docs_dir: docs
 strict: true
@@ -18,10 +18,12 @@ markdown_extensions:
   - markdown.extensions.attr_list
 
 nav:
-    - 'Home' : 'index.md'
-    - 'F.A.Q' : 'faq.md'
-
+    # V1 section
     - 'Original - V1' :
+
+      - 'Home' : 'index.md'
+      - 'F.A.Q' : 'faq.md'
+
       - 'Guides' :
         - 'Starter Player Guide' : 'guides/player.md'
 
@@ -49,3 +51,8 @@ nav:
           - 'Core Natives' :
             - 'Server Natives' : 'core/server_natives.md'
             - 'Client Natives' : 'core/client_natives.md'
+
+
+    # V2 section.
+    - 'Remake - V2' :
+      - 'Home' : 'v2/home.md'
